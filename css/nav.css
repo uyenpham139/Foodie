@@ -1,0 +1,166 @@
+/*--- Header/Navigation ---*/
+.navbar {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.5s ease-out;
+}
+
+/* For transparent navbar*/
+.navbar-scrolled {
+    background-color: var(--primary-color);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo name */
+.brand-name {
+    font-family: 'Righteous', Arial, Helvetica, sans-serif;
+    font-size: 2em!important;
+    font-weight: 500!important;
+    color: var(--sub-sub-color)!important;
+    transition: 0.4s ease;
+}
+
+/* Change color logo name */
+.brand-name-scrolled {
+    color: var(--white-color)!important;
+}
+
+.brand-logo{
+    height: 1em;
+    width: 1em;
+    transform: translateY(5px);
+}
+
+.navbar .navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+    transition: none;
+}
+
+.navbar .navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-btn {
+    color: var(--sub-sub-color)!important;
+    position: relative;
+    padding: 17px 3px!important;
+}
+
+.dropdown-menu {
+    background-color: var(--white-color)!important;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    transition: all 0.3s ease;       
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-color) !important;
+    color: var(--white-color) !important;
+}
+
+/* Large screen */
+@media (min-width: 768px){
+    .login-button {
+        border: 2px solid var(--primary-color)!important;
+        color: var(--sub-color-1)!important;
+        padding: 15px 18px!important;
+        border-radius: 50px;
+        text-decoration: none;
+    }
+
+    .login-button-scrolled {
+        border: 2px solid var(--sub-sub-color)!important;
+        color: var(--sub-sub-color)!important;
+    }
+
+    .login-button:hover {
+        border: 2px solid var(--primary-color)!important;
+        background-color: var(--primary-color);
+        color: var(--sub-sub-color)!important;
+    }
+
+    .login-button-scrolled:hover {
+        border: 2px solid var(--sub-sub-color)!important;
+        background-color: var(--sub-sub-color);
+        color: var(--white-color)!important;
+    }
+
+    .nav-btn-scrolled {
+        color: var(--white-color)!important;
+    }
+
+    .nav-btn:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 4px;
+        background-color: var(--primary-color);
+        visibility: hidden;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-btn-scrolled:before {
+        background-color: var(--sub-sub-color)!important;
+    }
+
+    .nav-btn:hover:before,
+    .nav-btn.active:before {
+        width: 100%;
+        visibility: visible;
+    }
+
+    .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+}
+
+/* Small screen */
+@media (max-width: 768px){
+    .offcanvas-header, .offcanvas-body {
+        background-color: var(--primary-color);
+    }
+
+    .offcanvas-header .brand-name {
+        color: var(--white-color)!important;
+    }
+
+    .offcanvas-header .btn-close:focus {
+        box-shadow: none;
+        outline: none;
+    }
+
+    .nav-btn {
+        text-align: center;
+        font-weight: bold;
+        color: var(--white-color)!important; 
+    }
+
+    .nav-btn:hover {
+        background-color: var(--primary-hover);
+    }
+
+    .login-button {
+        background-color: var(--sub-sub-color)!important;
+        color: var(--white-color)!important;
+        text-align: center !important;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: 0.2s ease;
+    }
+
+    .login-button:hover,
+    .nav-btn.active {
+        background-color: var(--sub-color)!important;
+    }
+}

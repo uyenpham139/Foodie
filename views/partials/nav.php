@@ -29,24 +29,32 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto mb-2 mb-md-0 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link nav-btn active mx-md-2" aria-current="page" href="/Feddy-food/index.php?=home">
+                            <a class="nav-link nav-btn home mx-md-2" aria-current="page" href="index.php?page=home">
                                 Home
                             </a>
                         </li>
+                        <!-- <li class="nav-item">
+                            <a class="nav-link nav-btn mx-md-2" href="index.php?page=menu">Menu</a>
+                        </li> -->
+                        <li class="nav-item dropdown">
+                            <a href="index.php?page=menu" class="nav-link nav-btn menu dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Menu
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="index.php?page=menu-breakfast" class="dropdown-item">Breakfast</a></li>
+                                <li><a href="index.php?page=menu-lunch" class="dropdown-item">Lunch</a></li>
+                                <li><a href="index.php?page=menu-dinner" class="dropdown-item">Dinner</a></li>
+                            </ul>
+                        </li>
+
                         <li class="nav-item">
-                            <a class="nav-link nav-btn mx-md-2" href="#news-pro">Special</a>
+                            <a class="nav-link nav-btn about mx-md-2" href="index.php?page=about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-btn mx-md-2" href="/Feddy-food/index.php?page=menu">Menu</a>
+                            <a class="nav-link nav-btn contact mx-md-2" href="index.php?page=contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-btn mx-md-2" href="/Feddy-food/index.php?page=about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-btn mx-md-2" href="/Feddy-food/index.php?page=contact">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/Feddy-food/index.php?=login" class="nav-link login-button mx-md-2">Log in</a>
+                            <a href="index.php?=login" class="nav-link login-button mx-md-2">Log in</a>
                         </li>
                     </ul>
                 </div>

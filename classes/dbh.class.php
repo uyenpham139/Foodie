@@ -4,7 +4,7 @@ class Dbh {
     private $host = "localhost";
     private $user = "root";
     private $pwd = "235meii13092004";
-    private $dbName = "practiceoopphp";
+    private $dbName = "foodiedb";
 
     // Containing the connection to the actual database
     protected function connect() {
