@@ -1,6 +1,6 @@
 <?php
     declare(strict_types = 1);
-    include 'includes/controller-autoLoad.inc.php';
+    include 'includes/pagecontroller-autoLoad.inc.php';
 
     $url = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
     $path = 'controllers/';
@@ -11,7 +11,11 @@
         $page = new Login();
         $page->index();
     }
-    if (strpos($url, 'home') !== false) {
+    else if (strpos($url, 'signup') !== false) {
+        $page = new Signup();
+        $page->index();
+    }
+    else if (strpos($url, 'home') !== false) {
         $page = new Home();
         $page->index();
     }
@@ -31,8 +35,5 @@
         $page = new Home();
         $page->index();
     }
-    // add comment to test 
-
-    //add sth
 ?>
 

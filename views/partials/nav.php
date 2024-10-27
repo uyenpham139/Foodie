@@ -37,13 +37,15 @@
                             <a class="nav-link nav-btn mx-md-2" href="index.php?page=menu">Menu</a>
                         </li> -->
                         <li class="nav-item dropdown">
-                            <a href="index.php?page=menu" class="nav-link nav-btn menu dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a href="index.php?page=menu" class="nav-link nav-btn menu mx-md-2 dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Menu
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a href="index.php?page=menu-breakfast" class="dropdown-item">Breakfast</a></li>
                                 <li><a href="index.php?page=menu-lunch" class="dropdown-item">Lunch</a></li>
                                 <li><a href="index.php?page=menu-dinner" class="dropdown-item">Dinner</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a href="index.php?page=menu-drinks" class="dropdown-item">Drinks</a></li>
                             </ul>
                         </li>
 
@@ -54,7 +56,10 @@
                             <a class="nav-link nav-btn contact mx-md-2" href="index.php?page=contact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a href="index.php?=login" class="nav-link login-button mx-md-2">Log in</a>
+                            <a href="index.php?page=signup" class="nav-link signup-button mx-md-2">Sign up</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="index.php?page=login" class="nav-link login-button mx-md-2">Log in</a>
                         </li>
                     </ul>
                 </div>

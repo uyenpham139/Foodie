@@ -6,6 +6,7 @@
     <!-- Boostrap CSS-->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/signup.css">
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/about.css">

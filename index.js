@@ -1,6 +1,7 @@
 const navElement = document.querySelector(".navbar");
 const brandName = document.querySelector(".brand-name");
 const loginBtn = document.querySelector(".login-button");
+const signupBtn = document.querySelector(".signup-button");
 const navBtns = document.querySelectorAll(".nav-btn")
 
 // let sections = document.querySelectorAll('section');
@@ -26,6 +27,9 @@ const urlParams = new URLSearchParams(keysValues);
 const page = urlParams.get('page');
 
 switch (page) {
+    case 'login':
+        document.title = 'Login';
+        break;
     case 'home':
         document.querySelector('.home').classList.add('active');
         document.title = 'Home';
@@ -54,6 +58,14 @@ switch (page) {
         document.querySelector('.menu').classList.add('active');
         document.title = 'Dinner';
         break;
+    case 'menu-drinks':
+        document.querySelector('.menu').classList.add('active');
+        document.title = 'Dinner';
+        break;
+    default:
+        document.querySelector('.home').classList.add('active');
+        document.title = 'Home';
+        break;
 }
 
 window.addEventListener('scroll', () => {
@@ -61,6 +73,7 @@ window.addEventListener('scroll', () => {
         navElement.classList.add('navbar-scrolled');
         brandName.classList.add('brand-name-scrolled');
         loginBtn.classList.add('login-button-scrolled');
+        signupBtn.classList.add('signup-button-scrolled');
         navBtns.forEach(navBtn => {
             navBtn.classList.add('nav-btn-scrolled');
         })
@@ -69,6 +82,7 @@ window.addEventListener('scroll', () => {
         navElement.classList.remove('navbar-scrolled');
         brandName.classList.remove('brand-name-scrolled');        
         loginBtn.classList.remove('login-button-scrolled');
+        signupBtn.classList.remove('signup-button-scrolled');
         navBtns.forEach(navBtn => {
             navBtn.classList.remove('nav-btn-scrolled');
         })

@@ -1,18 +1,23 @@
 <?php 
 
 class Dbh {
-    private $host = "localhost";
-    private $user = "root";
-    private $pwd = "235meii13092004";
-    private $dbName = "foodiedb";
 
-    // Containing the connection to the actual database
+    private $username = "root";
+    private $password = "235meii13092004";
+    private $host = "localhost";
+    private $db = "foodie";
+
     protected function connect() {
-        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbName;
-        // Create a PDO connection
-        $pdo = new PDO($dsn, $this->user, $this->pwd);
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        return $pdo;
-    } 
+        if($_SERVER["REQUEST_METHOD"] == "POST"){
+            try {
+                $dbh = new mysqli($this->host, $this->username, $this->password, $this->db);
+                return $dbh;
+            } catch (Exception $e) {
+                print "Error!: " . $e->getMessage() . "</br>";
+                die(); // Kill the connection
+            }
+        }
+        
+    }
 
 }
