@@ -29,7 +29,7 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto mb-2 mb-md-0 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link nav-btn home mx-md-2" aria-current="page" href="index.php?page=home">
+                            <a class="nav-link home nav-btn mx-md-2" aria-current="page" href="index.php?page=home">
                                 Home
                             </a>
                         </li>
@@ -37,7 +37,7 @@
                             <a class="nav-link nav-btn mx-md-2" href="index.php?page=menu">Menu</a>
                         </li> -->
                         <li class="nav-item dropdown">
-                            <a href="index.php?page=menu" class="nav-link nav-btn menu mx-md-2 dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a href="index.php?page=menu" class="nav-link menu nav-btn mx-md-2 dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Menu
                             </a>
                             <ul class="dropdown-menu">
@@ -50,10 +50,10 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link nav-btn about mx-md-2" href="index.php?page=about">About</a>
+                            <a class="nav-link about nav-btn mx-md-2" href="index.php?page=about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nav-btn contact mx-md-2" href="index.php?page=contact">Contact</a>
+                            <a class="nav-link contact nav-btn mx-md-2" href="index.php?page=contact">Contact</a>
                         </li>
                         <li class="nav-item">
                             <a href="index.php?page=signup" class="nav-link signup-button mx-md-2">Sign up</a>

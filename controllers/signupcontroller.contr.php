@@ -1,5 +1,5 @@
 <?php
-
+include 'classes/signup.class.php';
 class SignupController {
     private $firstname;
     private $lastname;
@@ -13,6 +13,31 @@ class SignupController {
         $this->email = $email;
         $this->password = $password;
         $this->repeatPassword = $repeatPassword;
+    }
+
+    private function signupUser() {
+        if($this->emptyInput() == false) {
+            header("location: ../index.php?error=emptyinput");
+            exit();
+        }
+        if($this->invalidName() == false) {
+            header("location: ../index.php?error=name");
+            exit();
+        }
+        if($this->invalidEmail() == false) {
+            header("location: ../index.php?error=email");
+            exit();
+        }
+        if($this->validatePassword() == false) {
+            header("location: ../index.php?error=invalidpassword");
+            exit();
+        }
+        if($this->passwordMatch() == false) {
+            header("location: ../index.php?error=passwordmatch");
+            exit();
+        }
+        
+
     }
 
     // Check whether the input is empty
@@ -61,4 +86,11 @@ class SignupController {
         return true;
     }
 
+    // private function userTaken() {
+    //     if($this->checkUser($this->email)) {
+    //         return false;
+    //     }
+    //     return true;
+    // }
+    
 }

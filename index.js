@@ -4,31 +4,16 @@ const loginBtn = document.querySelector(".login-button");
 const signupBtn = document.querySelector(".signup-button");
 const navBtns = document.querySelectorAll(".nav-btn")
 
-// let sections = document.querySelectorAll('section');
-// 
-// window.onscroll = () => {
-//     sections.forEach(sec => {
-//         let top = window.scrollY;
-//         let offset = sec.offsetTop - 150;
-//         let height = sec.offsetHeight;
-//         let id = sec.getAttribute('id');
-//         console.log(offset);
-//         if(top >= offset && top < offset + height) {
-//             navLinks.forEach(links => {
-//                 links.classList.remove('active');
-//                 document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-//             });
-//         };
-//     });
-// };
-
 const keysValues = window.location.search;
 const urlParams = new URLSearchParams(keysValues);
 const page = urlParams.get('page');
 
 switch (page) {
+    case 'signup':
+        document.title = 'Sign up';
+        break;
     case 'login':
-        document.title = 'Login';
+        document.title = 'Log in';
         break;
     case 'home':
         document.querySelector('.home').classList.add('active');
@@ -44,6 +29,10 @@ switch (page) {
         break;
     case 'contact':
         document.querySelector('.contact').classList.add('active');
+        brandName.classList.add('brand-name-contact');
+        navBtns.forEach(navBtn => {
+            navBtn.classList.add('nav-btn-contact');
+        })
         document.title = 'Contact';
         break;
     case 'menu-breakfast':

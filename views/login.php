@@ -4,22 +4,36 @@
 <body>
     <!-- Main -->
     <main>
-    <section class="about section py-5" id="about">
+    <section class="login section py-5" id="login">
             <div class="container">
                 <h2 class="section-title text-center pt-5 pb-5">
-                    Login
+                    Log in
                 </h2>
-                
-                <form action="../includes/login_processing.inc.php" method="post">
-                    <input type="email" name="username" placeholder="Username"> </br>
-                    <input type="password" name="pwd" placeholder="Password"> </br>
-                    <input type="submit" value="Submit" > </br>
-                </form>
+                <div class="login-box container">
+                    <div class="item">
+                        <div class="side-image"></div>
+                        <div class="login-form">
+                            <header>Welcome back!</header>
+                            <form action="" method="POST">
+                                <div class="input-field">
+                                    <input type="email" class="input" placeholder="Enter your email" required>
+                                    <label for="username">Username</label>
+                                </div>
+                                <div class="input-field">
+                                    <input type="password" class="input" placeholder="Enter your password" required>
+                                    <label for="pwd">Password</label>
+                                </div>
+                                <input type="submit"  class="submit-btn" value="Log in">
+                                <div class="input-field">
+                                    <span>Doesn't have an account yet? <a href="index.php?page=signup">Sign up here</a></span>
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
-
     <!-- Javascript -->
     <script src="index.js"></script>
 </body>
