@@ -14,16 +14,16 @@
                         <div class="side-image"></div>
                         <div class="login-form">
                             <header>Welcome back!</header>
-                            <form action="" method="POST">
+                            <form action="includes/login-processing.inc.php" method="post">
                                 <div class="input-field">
-                                    <input type="email" class="input" placeholder="Enter your email" required>
+                                    <input type="email" name="username" class="input" placeholder="Enter your email" required>
                                     <label for="username">Username</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="password" class="input" placeholder="Enter your password" required>
+                                    <input type="password" name="pwd" class="input" placeholder="Enter your password" required>
                                     <label for="pwd">Password</label>
                                 </div>
-                                <input type="submit"  class="submit-btn" value="Log in">
+                                <input type="submit" name="submit" class="submit-btn" value="Log in">
                                 <div class="input-field">
                                     <span>Doesn't have an account yet? <a href="index.php?page=signup">Sign up here</a></span>
                                 </div>

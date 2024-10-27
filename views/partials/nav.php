@@ -55,12 +55,36 @@
                         <li class="nav-item">
                             <a class="nav-link contact nav-btn mx-md-2" href="index.php?page=contact">Contact</a>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="index.php?page=signup" class="nav-link signup-button mx-md-2">Sign up</a>
                         </li>
                         <li class="nav-item">
                             <a href="index.php?page=login" class="nav-link login-button mx-md-2">Log in</a>
-                        </li>
+                        </li> -->
+                        <?php
+                            if(isset($_SESSION["userid"])) {
+                        ?>
+                            <li class="nav-item">
+                                <a href="index.php?page=home" class="nav-link signup-button mx-md-2">
+                                    <?php echo $_SESSION["userid"]; ?>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.php?page=login" class="nav-link login-button mx-md-2">Log out</a>
+                            </li> 
+                        <?php
+                            }
+                            else{
+                        ?>
+                            <li class="nav-item">
+                                <a href="index.php?page=signup" class="nav-link signup-button mx-md-2">Sign up</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.php?page=login" class="nav-link login-button mx-md-2">Log in</a>
+                            </li> 
+                        <?php        
+                            }
+                        ?>
                     </ul>
                 </div>
             </div>

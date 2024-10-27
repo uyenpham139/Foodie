@@ -1,6 +1,6 @@
 <?php
-include 'classes/signup.class.php';
-class SignupController {
+
+class SignupController extends Signup{
     private $firstname;
     private $lastname;
     private $email;
@@ -15,82 +15,101 @@ class SignupController {
         $this->repeatPassword = $repeatPassword;
     }
 
-    private function signupUser() {
+    public function signupUser() {
+        
         if($this->emptyInput() == false) {
             header("location: ../index.php?error=emptyinput");
             exit();
         }
+        
         if($this->invalidName() == false) {
             header("location: ../index.php?error=name");
             exit();
         }
+        
         if($this->invalidEmail() == false) {
             header("location: ../index.php?error=email");
             exit();
         }
+        
         if($this->validatePassword() == false) {
             header("location: ../index.php?error=invalidpassword");
             exit();
         }
+        
         if($this->passwordMatch() == false) {
             header("location: ../index.php?error=passwordmatch");
             exit();
         }
         
+        if($this->userTaken() == false) {
+            header("location: ../index.php?error=usernameoremailtaken");
+            exit();
+        }
 
+        $this->setUser($this->email, $this->password);
     }
 
     // Check whether the input is empty
     private function emptyInput() {
+        $result = true;
         // Check if these inputs are empty
         if(empty($this->firstname) || empty($this->lastname) 
             || empty($this->email) || empty($this->password) 
             || empty($this->repeatPassword) ) {
-                return false;
+                $result = false;
         }
-        return true;
+        else $result = true;
+        return $result;
     }
 
     // Check validity
     private function invalidName() {
-        if(!preg_match('/[a-zA-Z]/', $this->firstname) || !preg_match("a-zA-Z", $this->lastname)) {
-            return false;
+        $result = true;
+        if(!preg_match('/[a-zA-Z ]/', $this->firstname) || !preg_match('/[a-zA-Z ]/', $this->lastname)) {
+            $result = false;
         }
-        return true;
+        else $result = true;
+        return $result;
     }
 
     private function invalidEmail() {
+        $result = true;
         if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
-            return false;
+            $result = false;
         }
-        return true;
+        return $result;
     }
 
     private function validatePassword() {
+        $result = true;
         // Check password length
         if(strlen($this->password) < 8) {
-            return false;
+            $result = false;
         }
 
         // Check at least one uppercase
         if(!preg_match('/[A-Z]/', $this->password) || !preg_match('/[0-9]/', $this->password)) {
-            return false;
+            $result = false;
         }
-        return true;
+        return $result;
     }
 
     private function passwordMatch() {
+        $result = true;
         if($this->password !== $this->repeatPassword) {
-            return false;
+            $result = false;
         }
-        return true;
+        return $result;
     }
 
-    // private function userTaken() {
-    //     if($this->checkUser($this->email)) {
-    //         return false;
-    //     }
-    //     return true;
-    // }
+    private function userTaken() {
+        $result = true;
+        if(!$this->checkUser($this->email)) {
+            $result = false;
+        }
+        else $result = true;
+        return $result;
+    }
     
 }

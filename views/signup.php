@@ -14,32 +14,32 @@
                         <div class="side-image"></div>
                         <div class="register-form">
                             <header>Create account</header>
-                            <form action="" method="POST">
+                            <form action="includes/signup.inc.php" method="post">
                                 <div class="input-field">
-                                    <input type="text" class="input" placeholder="Enter your first name" required>
+                                    <input type="text" name="firstname" class="input" placeholder="Enter your first name" required>
                                     <label for="firstname">First name</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="text" class="input" placeholder="Enter your last name" required>
+                                    <input type="text" name="lastname" class="input" placeholder="Enter your last name" required>
                                     <label for="firstname">Last name</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="email" class="input" placeholder="Enter your email" required>
+                                    <input type="email" name="email" class="input" placeholder="Enter your email" required>
                                     <label for="email">Email</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="tel" class="input" placeholder="Enter your phone number" required>
+                                    <input type="tel" name="phone-no" class="input" placeholder="Enter your phone number" required>
                                     <label for="phone-number">Phone number</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="password" class="input" placeholder="Enter your password" required>
+                                    <input type="password" name="pwd" class="input" placeholder="Enter your password" required>
                                     <label for="pwd">Password</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="password" class="input" placeholder="Repeat your password" required>
+                                    <input type="password" name="repwd" class="input" placeholder="Repeat your password" required>
                                     <label for="repwd">Repeat Password</label>
                                 </div>
-                                <input type="submit"  class="submit-btn" value="Sign up">
+                                <input type="submit" name="submit" class="submit-btn" value="Sign up">
                                 <div class="input-field">
                                     <span>Already have an account? <a href="index.php?page=login">Log in here</a></span>
                                 </div>
