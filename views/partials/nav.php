@@ -53,9 +53,7 @@
                             <a class="nav-link contact nav-btn mx-md-2" href="index.php?page=contact">Contact</a>
                         </li>
                         <?php
-                            printf("status: %d", session_status());
                             if(isset($_SESSION["username"])) {
-                                print("yesssss");
                         ?>
                             <li class="nav-item">
                                 <a href="#" class="nav-link mx-md-2">
@@ -68,7 +66,6 @@
                         <?php
                             }
                             else{
-                                print("nooooo");
                         ?>
                             <li class="nav-item">
                                 <a href="index.php?page=signup" class="nav-link signup-button mx-md-2">Sign up</a>
