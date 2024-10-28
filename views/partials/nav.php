@@ -33,9 +33,6 @@
                                 Home
                             </a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a class="nav-link nav-btn mx-md-2" href="index.php?page=menu">Menu</a>
-                        </li> -->
                         <li class="nav-item dropdown">
                             <a href="index.php?page=menu" class="nav-link menu nav-btn mx-md-2 dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Menu
@@ -55,26 +52,23 @@
                         <li class="nav-item">
                             <a class="nav-link contact nav-btn mx-md-2" href="index.php?page=contact">Contact</a>
                         </li>
-                        <!-- <li class="nav-item">
-                            <a href="index.php?page=signup" class="nav-link signup-button mx-md-2">Sign up</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="index.php?page=login" class="nav-link login-button mx-md-2">Log in</a>
-                        </li> -->
                         <?php
-                            if(isset($_SESSION["userid"])) {
+                            printf("status: %d", session_status());
+                            if(isset($_SESSION["username"])) {
+                                print("yesssss");
                         ?>
                             <li class="nav-item">
-                                <a href="index.php?page=home" class="nav-link signup-button mx-md-2">
-                                    <?php echo $_SESSION["userid"]; ?>
+                                <a href="#" class="nav-link mx-md-2">
+                                    <?php echo $_SESSION["username"]; ?>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?page=login" class="nav-link login-button mx-md-2">Log out</a>
+                                <a href="includes/logout.inc.php" class="nav-link login-button mx-md-2">Log out</a>
                             </li> 
                         <?php
                             }
                             else{
+                                print("nooooo");
                         ?>
                             <li class="nav-item">
                                 <a href="index.php?page=signup" class="nav-link signup-button mx-md-2">Sign up</a>

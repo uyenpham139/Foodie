@@ -12,22 +12,17 @@ class LoginController extends Login{
     public function loginUser() {
         
         if($this->emptyInput() == false) {
-            header("location: ../index.php?error=emptyinput");
+            header("location: ../index.php?page=login&error=emptyinput");
             exit();
         }
         
         if($this->invalidUsername() == false) {
-            header("location: ../index.php?error=email");
+            header("location: ../index.php?page=login&error=email");
             exit();
         }
         
         if($this->validatePassword() == false) {
-            header("location: ../index.php?error=invalidpassword");
-            exit();
-        }
-
-        if($this->userTaken() == false) {
-            header("location: ../index.php?error=usernameoremailtaken");
+            header("location: ../index.php?page=login&error=invalidpassword");
             exit();
         }
 
@@ -65,15 +60,5 @@ class LoginController extends Login{
             $result = false;
         }
         return $result;
-    }
-
-    private function userTaken() {
-        $result = true;
-        if(!$this->checkUser($this->username)) {
-            $result = false;
-        }
-        else $result = true;
-        return $result;
-    }
-    
+    }    
 }

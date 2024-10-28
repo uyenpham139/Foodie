@@ -20,10 +20,8 @@ class Signup extends Dbh {
     }
     
     protected function checkUser($email) {
-        $query = $this->connect()->prepare("SELECT email FROM users WHERE email = ?");
-        $query->bind_param('s', $email);
-
-        $query->execute();
+        $query = $this->connect()->prepare("SELECT email FROM users WHERE email=?");
+        $query->bind_param("s", $email);
 
         if(!$query->execute()) {
             $query = null;
@@ -31,8 +29,11 @@ class Signup extends Dbh {
             exit();
         }
 
+        $result = $query->get_result();
+        $query->close();
+
         $resultCheck = true;
-        if($query->num_rows() > 0) {
+        if($result->num_rows > 0) {
             $resultCheck = false;
         }
         else {
