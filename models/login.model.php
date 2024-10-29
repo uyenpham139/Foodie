@@ -54,10 +54,11 @@ class Login extends Dbh {
 
             $user = $result->fetch_all(MYSQLI_ASSOC);
             
+            $hashedPassword = password_hash($pwd, PASSWORD_DEFAULT);
             // Send COOKIE
             if(isset($_REQUEST['remember-me'])){
-                setcookie("username", $username, time() + 20);
-                setcookie("password", $pwd, time() + 20);
+                setcookie("username", $username, time() + 20, "/");
+                setcookie("password", $hashedPassword, time() + 20, "/");
             }
             session_start();
             $_SESSION["userid"] = $user[0]["user_id"];

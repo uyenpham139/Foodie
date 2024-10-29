@@ -6,9 +6,9 @@ if(isset($_POST['submit'])) {
     $password = $_POST["pwd"];
 
     // Instantiate Login class
-    include "../classes/dbh.class.php";
-    include "../classes/login.class.php";
-    include "../controllers/logincontroller.contr.php";
+    include "../models/dbh.model.php";
+    include "../models/login.model.php";
+    include "../controllers/backend/logincontroller.contr.php";
     $login = new LoginController($username, $password);
 
     // Running error handlers and user login
