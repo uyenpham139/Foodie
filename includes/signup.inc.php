@@ -5,6 +5,7 @@ if(isset($_POST['submit'])) {
     $firstname = $_POST["firstname"];
     $lastname = $_POST["lastname"];
     $email = $_POST["email"];
+    $phone_no = $_POST["phone-no"];
     $password = $_POST["pwd"];
     $repeatPassword = $_POST["repwd"];
 
@@ -12,7 +13,7 @@ if(isset($_POST['submit'])) {
     include "../classes/dbh.class.php";
     include "../classes/signup.class.php";
     include "../controllers/signupcontroller.contr.php";
-    $signup = new SignupController($firstname, $lastname, $email, $password, $repeatPassword);
+    $signup = new SignupController($firstname, $lastname, $email, $phone_no, $password, $repeatPassword);
 
     // Running error handlers and user signup
     $signup->signupUser();

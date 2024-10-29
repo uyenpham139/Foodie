@@ -40,7 +40,7 @@
     font-size: 32px;
     font-weight: 700;
     top: 20px;
-    margin-bottom: 15px;
+    margin: 20px 0;
     padding-top: 20px;
     text-align: center;
 }
@@ -88,6 +88,21 @@
     font-weight: 500;
     color: var(--sub-sub-color);
     transition: 0.3s;
+}
+
+.login .input-box {
+    display: flex;
+    position: relative;
+    padding: 0 20px 10px 15px;
+    position: relative;    
+}
+
+.login .input-box input {
+    margin-right: 5px;
+}
+
+.login .input-box label {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
 .login .submit-btn {

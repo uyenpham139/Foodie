@@ -1,7 +1,7 @@
 /*--- Header/Navigation ---*/
 .navbar {
     font-family: "Inter", Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     transition: all 0.5s ease-out;
 }
@@ -15,7 +15,7 @@
 /* Logo name */
 .brand-name {
     font-family: 'Righteous', Arial, Helvetica, sans-serif;
-    font-size: 2em!important;
+    font-size: 1.5em!important;
     font-weight: 500!important;
     color: var(--sub-sub-color)!important;
     transition: 0.4s ease;
@@ -34,7 +34,7 @@
 .brand-logo{
     height: 1em;
     width: 1em;
-    transform: translateY(5px);
+    transform: translateY(3px);
 }
 
 .navbar .navbar-toggler {
@@ -48,22 +48,10 @@
     outline: none;
 }
 
-.nav-item .username {
-    color: var(--sub-sub-color)!important;
-    position: relative;
-    padding: 17px 3px!important;
-}
-
-.nav-item .username:hover {
-    color: var(--sub-color)!important;
-    position: relative;
-    padding: 17px 3px!important;
-}
-
 .nav-btn {
     color: var(--sub-sub-color)!important;
     position: relative;
-    padding: 17px 3px!important;
+    padding: 13px 3px!important;
 }
 
 /* change in contact page */
@@ -79,12 +67,42 @@
 
 .dropdown-item {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 14px;
     transition: all 0.3s ease;       
 }
 
 .dropdown-item:hover {
     background-color: var(--primary-color) !important;
     color: var(--white-color) !important;
+}
+
+.offcanvas-body {
+    transition: none;
+}
+
+.navbar .other-btn li {
+    display: inline-block;
+}
+
+.nav-item .logout-btn i {
+    size: 30px;
+    margin-right: 5px; /* Adjust margin as needed */
+    font-size: 1.2em;
+    padding: 1px 0;
+    color: var(--sub-sub-color);
+}
+
+.other-btn .username {
+    color: var(--sub-sub-color)!important;
+    position: relative;
+}
+
+.nav-item .username:hover {
+    color: var(--sub-color)!important;
+}
+
+.other-btn .username {
+    padding: 13px 3px!important;
 }
 
 /* Large screen */
@@ -94,7 +112,7 @@
     .signup-button {
         border: 2px solid var(--primary-color)!important;
         color: var(--primary-color)!important;
-        padding: 15px 18px!important;
+        padding: 11px 13px!important;
         border-radius: 50px;
         text-decoration: none;
     }
@@ -121,7 +139,7 @@
         border: 2px solid var(--primary-color)!important;
         background-color: var(--primary-color) !important;
         color: var(--sub-sub-color)!important;
-        padding: 15px 18px!important;
+        padding: 11px 13px!important;
         border-radius: 50px;
         text-decoration: none;
     }
@@ -142,6 +160,15 @@
         border: 2px solid var(--sub-color)!important;
         background-color: var(--sub-color) !important;
         color: var(--white-color)!important;
+    }
+    
+    .other-btn .logout-btn {
+        position: relative;
+        padding: 13px 3px!important;
+    }
+
+    .offcanvas-body .logout-btn {
+        display: none;
     }
 
     .nav-btn-scrolled {
@@ -179,6 +206,11 @@
 
 /* Small screen */
 @media (max-width: 768px){
+
+    .navbar {
+        transition: none;
+    }
+
     .offcanvas-header, .offcanvas-body {
         background-color: var(--primary-color);
     }
@@ -202,28 +234,30 @@
         background-color: var(--primary-hover);
     }
 
-    .login-button {
+    .login-button, 
+    .signup-button,
+    .offcanvas-body .logout-btn {
         background-color: var(--sub-sub-color)!important;
         color: var(--white-color)!important;
         text-align: center !important;
         border-radius: 50px;
         text-decoration: none;
         transition: 0.2s ease;
-    }
-
-    .signup-button {
-        background-color: var(--sub-sub-color)!important;
-        color: var(--white-color)!important;
-        text-align: center !important;
-        border-radius: 50px;
-        margin: 10px 0;
-        text-decoration: none;
-        transition: 0.2s ease;
+        margin: 5px 0;
     }
 
     .login-button:hover, 
     .signup-button:hover,
-    .nav-btn.active {
+    .nav-btn.active,
+    .offcanvas-body .logout-btn:hover {
         background-color: var(--sub-color)!important;
+    }
+
+    .other-btn .logout-btn {
+        display: none;
+    }
+    
+    .other-btn .username {
+        top: 5px;
     }
 }

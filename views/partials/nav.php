@@ -14,7 +14,6 @@
                     <i class="fa-solid fa-magnifying-glass" type="submit"></i>
                 </span>
             </form> -->
-
             <!-- Navigation -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -52,20 +51,9 @@
                         <li class="nav-item">
                             <a class="nav-link contact nav-btn mx-md-2" href="index.php?page=contact">Contact</a>
                         </li>
+                        <hr>
                         <?php
-                            if(isset($_SESSION["username"])) {
-                        ?>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link username mx-md-2">
-                                    <?php echo $_SESSION["username"]; ?>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="includes/logout.inc.php" class="nav-link login-button mx-md-2">Log out</a>
-                            </li> 
-                        <?php
-                            }
-                            else{
+                            if(!isset($_SESSION["username"])){
                         ?>
                             <li class="nav-item">
                                 <a href="index.php?page=signup" class="nav-link signup-button mx-md-2">Sign up</a>
@@ -75,14 +63,51 @@
                             </li> 
                         <?php        
                             }
+                            else {
+                        ?>
+                            <li class="nav-item">
+                                <a href="includes/logout.inc.php" class="nav-link logout-btn mx-md-2">
+                                    Log out
+                                </a>
+                            </li>
+                        <?php        
+                            }
                         ?>
                     </ul>
                 </div>
             </div>
-            <!-- <a href="#" class="login-button">Login</a> -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+             
+            <div class="d-flex">
+                <div class="other-btn">
+                    <ul class="navbar-nav ms-auto mb-2 mb-md-0 pe-3">
+                        <?php
+                            if(isset($_SESSION["username"])) {
+                        ?>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link username mx-md-2">
+                                    <i class="fa-solid fa-user mx-md-2"></i>
+                                    <?php echo $_SESSION["firstname"] . " " . $_SESSION["lastname"];?>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="includes/logout.inc.php" class="nav-link logout-btn mx-md-2">
+                                    <i class="fa-solid fa-right-from-bracket"></i>
+                                </a>
+                            </li>
+                        <?php
+                            }
+                        ?>
+                    </ul>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+            </button> -->
         </div>
     </nav>
 </header>

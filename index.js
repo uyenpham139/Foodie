@@ -62,20 +62,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.scrollY >= 50) {
             navElement.classList.add('navbar-scrolled');
             brandName.classList.add('brand-name-scrolled');
-            loginBtn.classList.add('login-button-scrolled');
-            signupBtn.classList.add('signup-button-scrolled');
             navBtns.forEach(navBtn => {
                 navBtn.classList.add('nav-btn-scrolled');
-            })
+            });
+            loginBtn.classList.add('login-button-scrolled');
+            signupBtn.classList.add('signup-button-scrolled');
         }
         else if (window.scrollY < 50) {
             navElement.classList.remove('navbar-scrolled');
-            brandName.classList.remove('brand-name-scrolled');        
-            loginBtn.classList.remove('login-button-scrolled');
-            signupBtn.classList.remove('signup-button-scrolled');
+            brandName.classList.remove('brand-name-scrolled');
             navBtns.forEach(navBtn => {
                 navBtn.classList.remove('nav-btn-scrolled');
-            })
+            });        
+            loginBtn.classList.remove('login-button-scrolled');
+            signupBtn.classList.remove('signup-button-scrolled');
         }
     });    
 });

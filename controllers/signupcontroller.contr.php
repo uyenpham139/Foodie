@@ -4,13 +4,15 @@ class SignupController extends Signup{
     private $firstname;
     private $lastname;
     private $email;
+    private $phone_no;
     private $password;
     private $repeatPassword;
 
-    public function __construct($firstname, $lastname, $email, $password, $repeatPassword) {
+    public function __construct($firstname, $lastname, $email, $phone_no, $password, $repeatPassword) {
         $this->firstname = $firstname;
         $this->lastname = $lastname;
         $this->email = $email;
+        $this->phone_no = $phone_no;
         $this->password = $password;
         $this->repeatPassword = $repeatPassword;
     }
@@ -47,7 +49,7 @@ class SignupController extends Signup{
             exit();
         }
 
-        $this->setUser($this->email, $this->password);
+        $this->setUser($this->email, $this->password, $this->firstname, $this->lastname, $this->phone_no);
     }
 
     // Check whether the input is empty
