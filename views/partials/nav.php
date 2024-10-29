@@ -56,7 +56,7 @@
                             if(isset($_SESSION["username"])) {
                         ?>
                             <li class="nav-item">
-                                <a href="#" class="nav-link mx-md-2">
+                                <a href="#" class="nav-link username mx-md-2">
                                     <?php echo $_SESSION["username"]; ?>
                                 </a>
                             </li>

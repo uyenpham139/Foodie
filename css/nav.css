@@ -48,6 +48,18 @@
     outline: none;
 }
 
+.nav-item .username {
+    color: var(--sub-sub-color)!important;
+    position: relative;
+    padding: 17px 3px!important;
+}
+
+.nav-item .username:hover {
+    color: var(--sub-color)!important;
+    position: relative;
+    padding: 17px 3px!important;
+}
+
 .nav-btn {
     color: var(--sub-sub-color)!important;
     position: relative;

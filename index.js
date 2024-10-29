@@ -57,24 +57,27 @@ switch (page) {
         break;
 }
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY >= 50) {
-        navElement.classList.add('navbar-scrolled');
-        brandName.classList.add('brand-name-scrolled');
-        loginBtn.classList.add('login-button-scrolled');
-        signupBtn.classList.add('signup-button-scrolled');
-        navBtns.forEach(navBtn => {
-            navBtn.classList.add('nav-btn-scrolled');
-        })
-    }
-    else if (window.scrollY < 50) {
-        navElement.classList.remove('navbar-scrolled');
-        brandName.classList.remove('brand-name-scrolled');        
-        loginBtn.classList.remove('login-button-scrolled');
-        signupBtn.classList.remove('signup-button-scrolled');
-        navBtns.forEach(navBtn => {
-            navBtn.classList.remove('nav-btn-scrolled');
-        })
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY >= 50) {
+            navElement.classList.add('navbar-scrolled');
+            brandName.classList.add('brand-name-scrolled');
+            loginBtn.classList.add('login-button-scrolled');
+            signupBtn.classList.add('signup-button-scrolled');
+            navBtns.forEach(navBtn => {
+                navBtn.classList.add('nav-btn-scrolled');
+            })
+        }
+        else if (window.scrollY < 50) {
+            navElement.classList.remove('navbar-scrolled');
+            brandName.classList.remove('brand-name-scrolled');        
+            loginBtn.classList.remove('login-button-scrolled');
+            signupBtn.classList.remove('signup-button-scrolled');
+            navBtns.forEach(navBtn => {
+                navBtn.classList.remove('nav-btn-scrolled');
+            })
+        }
+    });    
 });
+
 
