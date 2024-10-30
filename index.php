@@ -31,6 +31,10 @@
         $page = new Contact();
         $page->index();
     }
+    else if (strpos($url, 'profile') !== false) {
+        $page = new Profile();
+        $page->index();
+    }
     else {
         $page = new Home();
         $page->index();

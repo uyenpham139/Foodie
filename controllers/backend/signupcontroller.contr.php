@@ -20,32 +20,32 @@ class SignupController extends Signup{
     public function signupUser() {
         
         if($this->emptyInput() == false) {
-            header("location: ../index.php?error=emptyinput");
+            header("location: ../index.php?page=signup&error=emptyinput");
             exit();
         }
         
         if($this->invalidName() == false) {
-            header("location: ../index.php?error=name");
+            header("location: ../index.php?page=signup&error=invalidname");
             exit();
         }
         
         if($this->invalidEmail() == false) {
-            header("location: ../index.php?error=email");
+            header("location: ../index.php?page=signup&error=invalidemail");
             exit();
         }
         
         if($this->validatePassword() == false) {
-            header("location: ../index.php?error=invalidpassword");
+            header("location: ../index.php?page=signup&error=invalidpassword");
             exit();
         }
         
         if($this->passwordMatch() == false) {
-            header("location: ../index.php?error=passwordmatch");
+            header("location: ../index.php?page=signup&error=passwordmatch");
             exit();
         }
         
         if($this->userTaken() == false) {
-            header("location: ../index.php?error=usernameoremailtaken");
+            header("location: ../index.php?page=signup&error=usernameoremailtaken");
             exit();
         }
 

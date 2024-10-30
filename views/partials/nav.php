@@ -7,13 +7,6 @@
                 Foodie
             </a>
             
-            <!-- Search box -->
-            <!-- <form class="search-box ms-auto d-flex mt-3 col-lg-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <span class="input-group-btn">
-                    <i class="fa-solid fa-magnifying-glass" type="submit"></i>
-                </span>
-            </form> -->
             <!-- Navigation -->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -37,9 +30,9 @@
                                 Menu
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="index.php?page=menu-breakfast" class="dropdown-item">Breakfast</a></li>
-                                <li><a href="index.php?page=menu-lunch" class="dropdown-item">Lunch</a></li>
-                                <li><a href="index.php?page=menu-dinner" class="dropdown-item">Dinner</a></li>
+                                <li><a href="index.php?page=menu&type=breakfast" class="dropdown-item">Breakfast</a></li>
+                                <li><a href="index.php?page=menu&type=breakfast" class="dropdown-item">Lunch</a></li>
+                                <li><a href="index.php?page=menu&type=breakfast" class="dropdown-item">Dinner</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><a href="index.php?page=menu-drinks" class="dropdown-item">Drinks</a></li>
                             </ul>
@@ -84,7 +77,7 @@
                             if(isset($_SESSION["username"])) {
                         ?>
                             <li class="nav-item">
-                                <a href="#" class="nav-link username mx-md-2">
+                                <a href="index.php?page=profile" class="nav-link username mx-md-2">
                                     <i class="fa-solid fa-user mx-md-2"></i>
                                     <?php echo $_SESSION["firstname"] . " " . $_SESSION["lastname"];?>
                                 </a>
@@ -104,10 +97,6 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-
-            <!-- <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button> -->
         </div>
     </nav>
 </header>

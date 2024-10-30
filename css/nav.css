@@ -84,25 +84,30 @@
     display: inline-block;
 }
 
-.nav-item .logout-btn i {
-    size: 30px;
+.other-btn .logout-btn i {
     margin-right: 5px; /* Adjust margin as needed */
-    font-size: 1.2em;
+    font-size: 1.5em;
     padding: 1px 0;
     color: var(--sub-sub-color);
 }
 
+.other-btn .logout-btn-scrolled i {
+    color: var(--white-color) !important;
+}
+
 .other-btn .username {
     color: var(--sub-sub-color)!important;
+    font-weight: 500 !important;
     position: relative;
+    padding: 13px 3px!important;
+}
+
+.other-btn .username-scrolled {
+    color: var(--white-color)!important;
 }
 
 .nav-item .username:hover {
     color: var(--sub-color)!important;
-}
-
-.other-btn .username {
-    padding: 13px 3px!important;
 }
 
 /* Large screen */

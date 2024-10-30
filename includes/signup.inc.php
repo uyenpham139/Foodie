@@ -11,7 +11,7 @@ if(isset($_POST['submit'])) {
 
     // Instantiate Signup class
     include "../models/dbh.model.php";
-    include "../classes/signup.model.php";
+    include "../models/signup.model.php";
     include "../controllers/backend/signupcontroller.contr.php";
     $signup = new SignupController($firstname, $lastname, $email, $phone_no, $password, $repeatPassword);
 

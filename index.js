@@ -2,6 +2,8 @@ const navElement = document.querySelector(".navbar");
 const brandName = document.querySelector(".brand-name");
 const loginBtn = document.querySelector(".login-button");
 const signupBtn = document.querySelector(".signup-button");
+const username = document.querySelector(".username");
+const logoutBtn= document.querySelector(".logout-btn");
 const navBtns = document.querySelectorAll(".nav-btn")
 
 const keysValues = window.location.search;
@@ -65,17 +67,35 @@ document.addEventListener('DOMContentLoaded', () => {
             navBtns.forEach(navBtn => {
                 navBtn.classList.add('nav-btn-scrolled');
             });
-            loginBtn.classList.add('login-button-scrolled');
-            signupBtn.classList.add('signup-button-scrolled');
+            // loginBtn.classList.add('login-button-scrolled');
+            // signupBtn.classList.add('signup-button-scrolled');
+            // username.classList.add('username-scrolled');
+            // logoutBtn.classList.add('logout-btn-scrolled');
+            if (typeof window.sessionStorage.getItem("username") !== 'undefined' && window.sessionStorage.getItem("username") !== null) {
+                username.classList.add('username-scrolled');
+                logoutBtn.classList.add('logout-btn-scrolled');
+            } else {
+                loginBtn.classList.add('login-button-scrolled');
+                signupBtn.classList.add('signup-button-scrolled');
+            }
         }
         else if (window.scrollY < 50) {
             navElement.classList.remove('navbar-scrolled');
             brandName.classList.remove('brand-name-scrolled');
             navBtns.forEach(navBtn => {
                 navBtn.classList.remove('nav-btn-scrolled');
-            });        
-            loginBtn.classList.remove('login-button-scrolled');
-            signupBtn.classList.remove('signup-button-scrolled');
+            });       
+            // loginBtn.classList.remove('login-button-scrolled');
+            // signupBtn.classList.remove('signup-button-scrolled');
+            // username.classList.remove('username-scrolled');
+            // logoutBtn.classList.remove('logout-btn-scrolled');
+            if (typeof window.sessionStorage.getItem("username") !== 'undefined' && window.sessionStorage.getItem("username") !== null) {
+                username.classList.remove('username-scrolled');
+                logoutBtn.classList.remove('logout-btn-scrolled');
+            } else {
+                loginBtn.classList.remove('login-button-scrolled');
+                signupBtn.classList.remove('signup-button-scrolled');
+            }
         }
     });    
 });
