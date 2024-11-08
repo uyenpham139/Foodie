@@ -31,6 +31,20 @@
                                     <input type="tel" name="phone-no" class="input" placeholder="Enter your phone number" required>
                                     <label for="phone-number">Phone number</label>
                                 </div>
+                                <label for="country">Country:</label>
+                                <select id="country" name="country">
+                                    <option value="">Select Country</option>
+                                    <option value="USA">USA</option>
+                                    <option value="Canada">Canada</option>
+                                </select>
+
+                                <label for="state">State/Province:</label>
+                                <select id="state" name="state" disabled>
+                                    <option value="">Select State/Province</option>
+                                </select>
+
+                                <label for="city">City:</label>
+                                <input type="text" id="city" name="city" disabled>
                                 <div class="input-field">
                                     <input type="password" name="pwd" class="input" placeholder="Enter your password" required>
                                     <label for="pwd">Password</label>
