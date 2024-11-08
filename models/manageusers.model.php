@@ -1,6 +1,6 @@
 <?php
 
-    class Users extends Dbh{
+    class manageUsers extends Dbh{
         
         protected function getUserId($username) {
             $query = $this->connect()->prepare("SELECT user_id FROM users WHERE username=?");
@@ -38,7 +38,7 @@
                 exit();
             }
 
-            $query = null;
+            $query->close();
         }
 
         protected function deleteUser($username, $password, $userLevel, $phoneNumber) {
@@ -51,7 +51,7 @@
                 exit();
             }
             
-            $query = null;
+            $query->close();
         }
     }
 ?>

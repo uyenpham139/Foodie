@@ -3,18 +3,27 @@
     class Product extends Dbh{
         
         protected function getProduct($name) {
-            $sql = "SELECT * FROM users WHERE users_firstname = ?";
-            $stmt = $this->connect()->prepare($sql);
-            $stmt->execute([$name]);
+            $query = $this->connect()->prepare("SELECT * FROM menu WHERE item_name = ?");
 
-            $results = $stmt->fetchAll();
-            return $results;
-        }
+            $query->bind_param("ssssi", $email, $password, $email, $phoneNumber, $user_id);
 
-        protected function setProduct($firstname, $lastname, $dob) {
-            $sql = "INSERT INTO users(users_firstname, users_lastname, users_dateofbirth) VALUES(?, ?, ?)";
-            $stmt = $this->connect()->prepare($sql);
-            $stmt->execute([$firstname, $lastname, $dob]);
+            if(!$query->execute()) {
+                $query = null;
+                header("location: ../index.php?page=menu&error=queryfailed");
+                exit();
+            }
+
+            $result = $query->get_result();
+            $query->close();
+
+            if(!$result->num_rows > 0) {
+                $query = null;
+                header("location: ../index.php?page=menu&error=wrongusername");
+                exit();
+            }
+    
+            $user_id = $result->fetch_all(MYSQLI_ASSOC);
+            return $user_id;
         }
 
     }

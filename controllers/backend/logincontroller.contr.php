@@ -10,27 +10,11 @@ class LoginController extends Login{
     }
 
     public function loginUser() {
-        
-        if($this->emptyInput() == false) {
-            header("location: ../index.php?page=login&error=emptyinput");
-            exit();
-        }
-        
-        if($this->invalidUsername() == false) {
-            header("location: ../index.php?page=login&error=email");
-            exit();
-        }
-        
-        if($this->validatePassword() == false) {
-            header("location: ../index.php?page=login&error=invalidpassword");
-            exit();
-        }
-
         $this->getUser($this->username, $this->password);
     }
 
     // Check whether the input is empty
-    private function emptyInput() {
+    public function emptyInput() {
         $result = true;
         // Check if these inputs are empty
         if(empty($this->username) || empty($this->password)) {
@@ -40,7 +24,7 @@ class LoginController extends Login{
         return $result;
     }
 
-    private function invalidUsername() {
+    public function invalidUsername() {
         $result = true;
         if(!filter_var($this->username, FILTER_VALIDATE_EMAIL)) {
             $result = false;
@@ -48,7 +32,7 @@ class LoginController extends Login{
         return $result;
     }
 
-    private function validatePassword() {
+    public function validatePassword() {
         $result = true;
         // Check password length
         if(strlen($this->password) < 8) {

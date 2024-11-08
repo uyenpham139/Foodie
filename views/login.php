@@ -1,7 +1,24 @@
+<?php
+function check_login_errors() {
+    if(isset($_SESSION["errors_login"])) {
+        $errors = $_SESSION["errors_login"];
+
+        foreach($errors as $key => $val) {
+            echo "<script> 
+                alert('" . $key . "');
+            </script>";
+        }
+        unset($_SESSION["errors_login"]);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <body>
+    <!-- Check errors -->
+    <?php check_login_errors(); ?>
     <!-- Main -->
     <main>
     <section class="login section py-5" id="login">
@@ -30,7 +47,6 @@
                                 <div class="input-field">
                                     <span>Don't have an account yet? <a href="index.php?page=signup">Sign up here</a></span>
                                 </div>
-                                
                             </form>
                         </div>
                     </div>
