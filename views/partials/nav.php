@@ -20,6 +20,12 @@
                 
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto mb-2 mb-md-0 pe-3">
+                        <form action="includes/search.inc.php" class="search-large-screen form-inline my-2 my-lg-0" method="get">
+                            <input class="search-bar form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                            <button class="search-button btn btn-outline-success mr-sm-2" type="submit" name="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
                         <li class="nav-item">
                             <a class="nav-link home nav-btn mx-md-2" aria-current="page" href="index.php?page=home">
                                 Home
@@ -69,7 +75,15 @@
                     </ul>
                 </div>
             </div>
-             
+
+            <div class="search-form d-flex">
+                <form action="includes/search.inc.php" class="search-small-screen form-inline my-2 my-lg-0" method="get">
+                    <input class="search-bar form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                    <button class="search-button btn btn-outline-success my-2 my-sm-0" type="submit" name="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+            </div>
             <div class="d-flex">
                 <div class="other-btn">
                     <ul class="navbar-nav ms-auto mb-2 mb-md-0 pe-3">

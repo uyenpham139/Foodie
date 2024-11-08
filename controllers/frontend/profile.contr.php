@@ -7,5 +7,6 @@ class Profile {
         require_once 'views/partials/nav.php';
         require_once 'views/profile.php';
         require_once 'views/partials/footer.php';
+        require_once 'views/partials/modal.php';
     }
 }

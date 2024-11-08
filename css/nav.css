@@ -110,8 +110,50 @@
     color: var(--sub-color)!important;
 }
 
+.search-bar:focus {
+    box-shadow: none;
+    outline: none;
+}
+
 /* Large screen */
 @media (min-width: 768px){
+
+    .search-large-screen {
+        display: flex;
+        margin-right: 20px;
+        align-items: center;
+    }
+
+    .search-large-screen .search-bar:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .search-large-screen .search-bar {
+        border-radius: 5px;
+        margin: 5px 0;
+        border: none;
+    }
+
+    .search-large-screen .search-button {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        transform: translateX(-100%);
+        height: 76%;
+    }
+
+    .search-large-screen .search-bar::placeholder {
+        color: var(--sub-text-color);
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+    }
+
+    .search-small-screen {
+        display: none;
+    }
 
     /* Signup button */
     .signup-button {
@@ -211,6 +253,43 @@
 
 /* Small screen */
 @media (max-width: 768px){
+
+    .search-large-screen {
+        display: none;
+    }
+
+    .search-small-screen {
+        display: flex;
+        margin-right: 20px;
+        align-items: center;
+    }
+
+    .search-small-screen .search-bar:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    .search-small-screen .search-bar {
+        border-radius: 5px;
+        margin: 5px 0;
+        border: none;
+    }
+
+    .search-small-screen .search-button {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        transform: translateX(-100%);
+        height: 78%;
+    }
+
+    .search-small-screen .search-bar::placeholder {
+        color: var(--sub-text-color);
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+    }
 
     .navbar {
         transition: none;
