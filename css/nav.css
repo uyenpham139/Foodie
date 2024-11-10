@@ -261,10 +261,16 @@
         display: none;
     }
 
+    .search-form {
+        width: 50%;
+    }
+
     .search-small-screen {
         display: flex;
         margin-right: 20px;
         align-items: center;
+        width: 100%;
+        margin-left: 10px;
     }
 
     .search-small-screen .search-bar:focus {

@@ -2,13 +2,12 @@
 <html lang="en">
 
 <?php
-    include_once 'includes/menusearch.inc.php';
-    // $searchItems = $_SESSION['searchItems']; 
-    if (empty($searchItems)) {
-        echo "<script>console.log('No items found.');</script>";
+    $searchItems = [];
+    if(isset($_SESSION['searchItems'])) {
+        $searchItems = $_SESSION['searchItems'];
     }
     else {
-        echo "<script>console.log('Items:', " . json_encode($searchItems) . ");</script>";
+        echo 'Cannot find any search items';
     }
 ?>  
 
@@ -96,4 +95,9 @@
     <script src="modal.js"></script>
 </body>
 
+<?php if(!isset($_SESSION["username"])) {
+    session_unset();
+    session_destroy();
+}
+?>
 </html>

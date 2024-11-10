@@ -20,7 +20,7 @@
         $page->index();
     }
     else if (strpos($url, 'search') !== false) {
-        $page = new MenuSearch();
+        $page = new Search();
         $page->index();
     }
     else if (strpos($url, 'menu') !== false) {

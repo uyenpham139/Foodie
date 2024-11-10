@@ -22,7 +22,7 @@
                     <ul class="navbar-nav ms-auto mb-2 mb-md-0 pe-3">
                         <form id="searchForm" action="includes/menusearch.inc.php" class="search-large-screen form-inline my-2 my-lg-0" method="get">
                             <input class="search-bar form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-                            <button class="search-button btn btn-outline-success mr-sm-2" type="submit" name="submit" data-bs-toggle="modal" data-bs-target="#searchModal">
+                            <button class="search-button btn btn-outline-success mr-sm-2" type="submit" name="searchsubmit" data-bs-toggle="modal" data-bs-target="#searchModal">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </form>
@@ -79,7 +79,7 @@
             <div class="search-form d-flex">
                 <form id="searchFormSmall" action="includes/menusearch.inc.php" class="search-small-screen form-inline my-2 my-lg-0" method="get">
                     <input class="search-bar form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-                    <button class="search-button btn btn-outline-success mr-sm-2" type="submit" name="submit" data-bs-toggle="modal" data-bs-target="#searchModal">
+                    <button class="search-button btn btn-outline-success" type="submit" name="searchsubmit" data-bs-toggle="modal" data-bs-target="#searchModal">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </form>

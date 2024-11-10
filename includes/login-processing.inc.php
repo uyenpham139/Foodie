@@ -36,7 +36,7 @@ if(isset($_POST['submit'])) {
     $login->loginUser();
 
     // Going back to front page
-    header("location: ../index.php?error=none");
+    header("location: ../index.php?page=home");
 }
 
 ?>

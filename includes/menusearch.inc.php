@@ -1,57 +1,29 @@
 <?php
-
 $searchItems = [];
-function getSearchItems() {
-    $items = [];
-    if (isset($_GET['submit'])) {
+if (isset($_GET['searchsubmit'])) {
+    // Grabbing the data from the search form
+    $item = $_GET["search"];
 
-        // Grabbing the data
-        $item = $_GET["search"];
+    // Include necessary files
+    include_once "../models/dbh.model.php";
+    include_once "../models/product.model.php";
+    include_once "../controllers/backend/searchcontroller.contr.php";
     
-        // Instantiate Login class
-        include_once "../models/dbh.model.php";
-        include_once "../models/product.model.php";
-        include_once "../controllers/backend/searchcontroller.contr.php";
-        
-        $searchItem = new SearchController($item);
-        $items = $searchItem->searchItems();
-    } 
-    return $items;
-}
+    // Instantiate SearchController
+    $searchItem = new SearchController($item);
+    $searchItems = $searchItem->searchItems();
+} 
+if(!isset($_SESSION["username"]))
+    session_start(); 
 
-$searchItems = getSearchItems();
-
-// echo '<table>';
-// echo '<thead>
-//     <tr>
-//         <th>Dish</th>
-//         <th>Description</th>
-//         <th>Category</th>
-//         <th>Price</th>
-//     </tr>
-// </thead>';
-// echo '<tbody>';
-
-// // Loop through $productData and display each item in a table row
-// foreach ($searchItems as $item) {
-//     echo '<tr>
-//         <td>' . htmlspecialchars($item['item_name']) . '</td>
-//         <td>' . htmlspecialchars($item['description']) . '</td>
-//         <td>' . htmlspecialchars($item['category']) . '</td>
-//         <td>' . htmlspecialchars(number_format($item['price'], 0, ',', '.')) . ' vnd</td>
-//     </tr>';
-// }
-
-$errorMessage = "";
-if (isset($_SESSION['product_not_found']) && $_SESSION['product_not_found']) {
-    $errorMessage = "Product not found";
-
-    $_SESSION['product_not_found'] = false;
-    unset($_SESSION['product_not_found']);
-    // Redirect with an error parameter
-    echo '<script>window.location.href = "../index.php?page=menu-search&error=product_not_found";</script>';
+if (empty($searchItems)) {
+    // Set session variable to indicate product not found and redirect to menu page with an error
+    $_SESSION['product_not_found'] = true;
+    header("Location: ../index.php?page=menu&error=product_not_found");
+    exit();
 } else {
-    $searchItems = getSearchItems();
-    echo '<script>window.location.href = "../index.php?page=menu-search&success=product_found";</script>';
+    $_SESSION['searchItems'] = $searchItems;
+    header("Location: ../index.php?page=search&success=product_found");
+    exit();
 }
 ?>
