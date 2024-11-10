@@ -31,20 +31,24 @@
                                     <input type="tel" name="phone-no" class="input" placeholder="Enter your phone number" required>
                                     <label for="phone-number">Phone number</label>
                                 </div>
-                                <label for="country">Country:</label>
-                                <select id="country" name="country">
-                                    <option value="">Select Country</option>
-                                    <option value="USA">USA</option>
-                                    <option value="Canada">Canada</option>
-                                </select>
+                                
+                                <div class="dropdown-list">
+                                    <label for="country">Country</label>
+                                    <select id="countries" name="countries">
+                                        <option value="">Select Country</option>
+                                    </select>
 
-                                <label for="state">State/Province:</label>
-                                <select id="state" name="state" disabled>
-                                    <option value="">Select State/Province</option>
-                                </select>
+                                    <label for="state">State/Province</label>
+                                    <select id="states" name="states" disabled>
+                                        <option value="">Select State/Province</option>
+                                    </select>
 
-                                <label for="city">City:</label>
-                                <input type="text" id="city" name="city" disabled>
+                                    <label for="city">City</label>
+                                    <select id="cities" name="cities" disabled>
+                                        <option value="">Select City</option>
+                                    </select>
+                                </div>
+
                                 <div class="input-field">
                                     <input type="password" name="pwd" class="input" placeholder="Enter your password" required>
                                     <label for="pwd">Password</label>
@@ -66,6 +70,8 @@
         </section>
     <!-- Javascript -->
     <script src="index.js"></script>
+    <script src="modal.js"></script>
+    <script src="signup.js"></script>
 </body>
 </html>
 

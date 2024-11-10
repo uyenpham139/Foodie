@@ -8,7 +8,7 @@
 
 .signup-box .item {
     width: 1000px;
-    height: 720px;
+    height: 100%;
     max-width: 920px;
     border-radius: 10px;
     box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.3);
@@ -83,7 +83,7 @@
     left: 10px;
     padding-left: 5px;
     transform: translateY(-50%);
-    font-size: 16px;
+    font-size: 1em;
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-weight: 500;
     color: var(--sub-sub-color);
@@ -119,6 +119,36 @@
 .signup a {
     text-decoration: none;
     color: var(--sub-color-1);
+}
+
+.signup .dropdown-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+.signup .dropdown-list label {
+    font-size: 1em;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: var(--sub-sub-color)!important;
+    margin-left: 5px;
+    margin-bottom: 1px;
+}
+
+.signup .dropdown-list select {
+    margin-bottom: 20px;
+    background-color: var(--white-color);
+    border: 2px solid var(--sub-color);
+    height: 45px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+.signup .dropdown-list select:disabled{
+    border: 2px solid var(--sub-sub-color);
 }
 
 @media(max-width:850px){

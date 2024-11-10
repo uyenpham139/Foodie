@@ -49,6 +49,7 @@
         </section>
     <!-- Javascript -->
     <script src="index.js"></script>
+    <script src="modal.js"></script>
 </body>
 </html>
 

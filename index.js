@@ -7,7 +7,7 @@ const logoutBtn= document.querySelector(".logout-btn");
 const navBtns = document.querySelectorAll(".nav-btn")
 
 const keysValues = window.location.search;
-const urlParams = new URLSearchParams(keysValues);
+var urlParams = new URLSearchParams(keysValues);
 const page = urlParams.get('page');
 
 switch (page) {

@@ -2,7 +2,7 @@
 
 class Signup extends Dbh {
 
-    protected function setUser($email, $pwd, $firstname, $lastname, $phone_no) {
+    protected function setUser($email, $pwd, $firstname, $lastname, $phone_no, $country, $state, $city) {
 
         // Table users
         $query = $this->connect()->prepare("INSERT INTO users(username, user_password, user_level, date_created, last_login, email) VALUES(?, ?, 1, NOW(), NOW(), ?);");
@@ -21,9 +21,9 @@ class Signup extends Dbh {
         // Table contact_info
         $userID = $query->insert_id;
 
-        $query = $this->connect()->prepare("INSERT INTO contact_info(user_id, firstname, lastname, email, phone_no) VALUES(?, ?, ?, ?, ?);");
+        $query = $this->connect()->prepare("INSERT INTO contact_info(user_id, firstname, lastname, email, phone_no, country, province, city) VALUES(?, ?, ?, ?, ?, ?, ?, ?);");
         
-        $query->bind_param("issss", $userID, $firstname, $lastname, $email, $phone_no);
+        $query->bind_param("isssssss", $userID, $firstname, $lastname, $email, $phone_no, $country, $state, $city);
 
         if(!$query->execute()) {
             $query = null;

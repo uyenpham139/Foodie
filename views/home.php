@@ -38,7 +38,7 @@ if (isset($_SESSION['product_not_found']) && $_SESSION['product_not_found']) {
             <div class="container py-3">
                 <div class="row g-5">
                     <div class="d-flex align-items-center justify-content-between">
-                        <div class="col-12 col-lg-6">
+                        <div class="hero-text col-12 col-lg-6">
                             <h1 class="title fw-bold">
                                 <span>Vietnamese</span> Dishes: Discover a World of Flavors
                             </h1>
@@ -89,7 +89,9 @@ if (isset($_SESSION['product_not_found']) && $_SESSION['product_not_found']) {
             </div>
         </section>
     </main>
+    
     <!-- Javascript -->
     <script src="index.js"></script>
+    <script src="modal.js"></script>
 </body>
 </html>

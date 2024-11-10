@@ -2,7 +2,14 @@
 <html lang="en">
 
 <?php
-    include_once 'includes/menu.inc.php';
+    include_once 'includes/menusearch.inc.php';
+    // $searchItems = $_SESSION['searchItems']; 
+    if (empty($searchItems)) {
+        echo "<script>console.log('No items found.');</script>";
+    }
+    else {
+        echo "<script>console.log('Items:', " . json_encode($searchItems) . ");</script>";
+    }
 ?>  
 
 <body>
@@ -44,7 +51,7 @@
                     </div>
                     <div class="menu-list-row">
                         <div class="row g-xxl-5 bydefault_show" id="menu-dish">
-                            <?php foreach ($menuItems as $item): ?>
+                            <?php foreach ($searchItems as $item): ?>
                             <?php 
                                 // Set category classes dynamically
                                 $categoryClass = strtolower(str_replace(' ', '-', $item['category']));

@@ -1,9 +1,8 @@
 /*--- Header/Navigation ---*/
 .navbar {
     font-family: "Inter", Arial, Helvetica, sans-serif;
-    font-size: 14px;
+    font-size: 1em;
     font-weight: bold;
-    transition: all 0.5s ease-out;
 }
 
 /* For transparent navbar*/
@@ -18,7 +17,7 @@
     font-size: 1.5em!important;
     font-weight: 500!important;
     color: var(--sub-sub-color)!important;
-    transition: 0.4s ease;
+    transition: 0.1s ease;
 }
 
 /* Change color in contact page */
@@ -145,6 +144,10 @@
         height: 76%;
     }
 
+    .search-large-screen .search-button:hover {
+        background-color: var(--sub-sub-color);
+    }
+
     .search-large-screen .search-bar::placeholder {
         color: var(--sub-text-color);
         font-family: 'Roboto', sans-serif;
@@ -232,7 +235,7 @@
         height: 4px;
         background-color: var(--primary-color);
         visibility: hidden;
-        transition: 0.3s ease-in-out;
+        transition: 0.1s ease-in-out;
     }
 
     .nav-btn-scrolled:before {
@@ -326,7 +329,7 @@
         text-align: center !important;
         border-radius: 50px;
         text-decoration: none;
-        transition: 0.2s ease;
+        transition: 0.1s ease;
         margin: 5px 0;
     }
 
