@@ -37,6 +37,10 @@ switch (page) {
         })
         document.title = 'Contact';
         break;
+    case 'menu-search':
+        document.querySelector('.menu').classList.add('active');
+        document.title = 'Searching';
+        break;
     case 'menu-breakfast':
         document.querySelector('.menu').classList.add('active');
         document.title = 'Breakfast';

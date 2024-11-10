@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const error = urlParams.get('error');
     const success = urlParams.get('success');
 
-    if (page === 'search') {
+    if (page === 'menu-search') {
         // Display modal based on error or success parameters
         if (error) {
             document.getElementById('modalTitle').textContent = 'Error';

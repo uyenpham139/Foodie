@@ -1,3 +1,13 @@
+.about .container {
+    height: 100vh;
+}
+
+.about .components {    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .about .title, .about .location {
     color: var(--heading-color);
     font-family: "Inter", Arial, Helvetica, sans-serif;

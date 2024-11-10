@@ -19,7 +19,7 @@
         $page = new Home();
         $page->index();
     }
-    else if (strpos($url, 'search') !== false) {
+    else if (strpos($url, 'menu-search') !== false) {
         $page = new Search();
         $page->index();
     }

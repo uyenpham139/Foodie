@@ -23,7 +23,7 @@ if (empty($searchItems)) {
     exit();
 } else {
     $_SESSION['searchItems'] = $searchItems;
-    header("Location: ../index.php?page=search&success=product_found");
+    header("Location: ../index.php?page=menu-search&success=product_found");
     exit();
 }
 ?>
