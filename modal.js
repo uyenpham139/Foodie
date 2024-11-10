@@ -11,11 +11,13 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById('modalMessage').textContent = 'Product not found.';
             var searchModal = new bootstrap.Modal(document.getElementById('searchModal'));
             searchModal.show(); // Show the modal
-        } else if (success) {
-            document.getElementById('modalTitle').textContent = 'Success';
-            document.getElementById('modalMessage').textContent = 'Product found!';
-            var searchModal = new bootstrap.Modal(document.getElementById('searchModal'));
-            searchModal.show(); // Show the modal
-        }
+        } 
+        
+        // else if (success) {
+        //     document.getElementById('modalTitle').textContent = 'Success';
+        //     document.getElementById('modalMessage').textContent = 'Product found!';
+        //     var searchModal = new bootstrap.Modal(document.getElementById('searchModal'));
+        //     searchModal.show(); // Show the modal
+        // }
     }
 });

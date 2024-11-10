@@ -21,6 +21,10 @@ switch (page) {
         document.querySelector('.home').classList.add('active');
         document.title = 'Home';
         break;
+    case 'menu-search':
+        document.querySelector('.menu').classList.add('active');
+        document.title = 'Searching';
+        break;
     case 'menu':
         document.querySelector('.menu').classList.add('active');
         document.title = 'Menu';
@@ -36,10 +40,6 @@ switch (page) {
             navBtn.classList.add('nav-btn-contact');
         })
         document.title = 'Contact';
-        break;
-    case 'menu-search':
-        document.querySelector('.menu').classList.add('active');
-        document.title = 'Searching';
         break;
     case 'menu-breakfast':
         document.querySelector('.menu').classList.add('active');

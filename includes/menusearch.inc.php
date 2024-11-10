@@ -19,7 +19,7 @@ if(!isset($_SESSION["username"]))
 if (empty($searchItems)) {
     // Set session variable to indicate product not found and redirect to menu page with an error
     $_SESSION['product_not_found'] = true;
-    header("Location: ../index.php?page=menu&error=product_not_found");
+    header("Location: ../index.php?page=menu-search&error=product_not_found");
     exit();
 } else {
     $_SESSION['searchItems'] = $searchItems;

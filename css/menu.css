@@ -3,6 +3,7 @@
 .sec-wp {
     position: relative;
     z-index: 4;
+    height: 100vh;
 }
 
 .sec-title .h3-title {

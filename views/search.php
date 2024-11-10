@@ -6,15 +6,12 @@
     if(isset($_SESSION['searchItems'])) {
         $searchItems = $_SESSION['searchItems'];
     }
-    else {
-        echo 'Cannot find any search items';
-    }
 ?>  
 
 <body>
     <!-- Main -->
     <main>
-        <section class="our-menu section bg-light repeat-img py-5" id="menu">
+        <section class="menu section bg-light repeat-img py-5" id="menu">
             <div class="sec-wp">
                 <div class="container">
                     <div class="row">
