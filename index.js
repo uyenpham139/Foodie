@@ -71,10 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navBtns.forEach(navBtn => {
                 navBtn.classList.add('nav-btn-scrolled');
             });
-            // loginBtn.classList.add('login-button-scrolled');
-            // signupBtn.classList.add('signup-button-scrolled');
-            // username.classList.add('username-scrolled');
-            // logoutBtn.classList.add('logout-btn-scrolled');
             if (typeof window.sessionStorage.getItem("username") !== 'undefined' && window.sessionStorage.getItem("username") !== null) {
                 username.classList.add('username-scrolled');
                 logoutBtn.classList.add('logout-btn-scrolled');
@@ -88,11 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             brandName.classList.remove('brand-name-scrolled');
             navBtns.forEach(navBtn => {
                 navBtn.classList.remove('nav-btn-scrolled');
-            });       
-            // loginBtn.classList.remove('login-button-scrolled');
-            // signupBtn.classList.remove('signup-button-scrolled');
-            // username.classList.remove('username-scrolled');
-            // logoutBtn.classList.remove('logout-btn-scrolled');
+            }); 
             if (typeof window.sessionStorage.getItem("username") !== 'undefined' && window.sessionStorage.getItem("username") !== null) {
                 username.classList.remove('username-scrolled');
                 logoutBtn.classList.remove('logout-btn-scrolled');

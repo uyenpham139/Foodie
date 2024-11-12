@@ -2,7 +2,7 @@
 <html lang="en">
 <?php 
 // Sample temporary address//
-    // $address = "Quận 10, Thành phố Hồ Chí Minh, Việt Nam";
+    $address = "Quận 10, Thành phố Hồ Chí Minh, Việt Nam";
     $latitude = 10.7769; // Example latitude
     $longitude = 106.7009; // Example longitude
 ?>  

@@ -36,11 +36,12 @@
                                 Menu
                             </a>
                             <ul class="dropdown-menu">
+                            <li><a href="index.php?page=menu" class="dropdown-item">All</a></li>
                                 <li><a href="index.php?page=menu&type=breakfast" class="dropdown-item">Breakfast</a></li>
-                                <li><a href="index.php?page=menu&type=breakfast" class="dropdown-item">Lunch</a></li>
-                                <li><a href="index.php?page=menu&type=breakfast" class="dropdown-item">Dinner</a></li>
+                                <li><a href="index.php?page=menu&type=lunch" class="dropdown-item">Lunch</a></li>
+                                <li><a href="index.php?page=menu&type=dinner" class="dropdown-item">Dinner</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a href="index.php?page=menu-drinks" class="dropdown-item">Drinks</a></li>
+                                <li><a href="index.php?page=menu&type=drinks" class="dropdown-item">Drinks</a></li>
                             </ul>
                         </li>
 

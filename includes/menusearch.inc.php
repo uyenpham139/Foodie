@@ -11,8 +11,15 @@ if (isset($_GET['searchsubmit'])) {
     
     // Instantiate SearchController
     $searchItem = new SearchController($item);
+
+    if($searchItem->emptyInput() == false) {
+        header("Location: ../index.php?page=menu");
+        exit();
+    }
+
     $searchItems = $searchItem->searchItems();
 } 
+
 if(!isset($_SESSION["username"]))
     session_start(); 
 
