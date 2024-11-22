@@ -69,9 +69,9 @@
             </div>
         </section>
     <!-- Javascript -->
-    <script src="index.js"></script>
-    <script src="modal.js"></script>
-    <script src="signup.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/signup.js"></script>
 </body>
 </html>
 

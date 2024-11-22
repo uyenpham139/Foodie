@@ -131,4 +131,4 @@
     </nav>
 </header>
 
-<script src="livesearch.js"></script>
+<script src="js/livesearch.js"></script>

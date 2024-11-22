@@ -50,8 +50,8 @@
             </div>
         </section>
     <!-- Javascript -->
-    <script src="index.js"></script>
-    <script src="modal.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 </html>
 

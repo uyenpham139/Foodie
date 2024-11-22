@@ -93,9 +93,9 @@
     <script src="https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
     
     <!-- Javascript -->
-    <script src="index.js"></script>
-    <script src="menu.js"></script>
-    <script src="modal.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 
 </html>

@@ -66,8 +66,8 @@
     </main>
 
     <!-- Javascript -->
-    <script src="index.js"></script>
-    <script src="modal.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 
 <?php if(!isset($_SESSION["username"])) {
