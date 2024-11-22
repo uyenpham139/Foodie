@@ -20,12 +20,20 @@
                 
                 <div class="offcanvas-body">
                     <ul class="navbar-nav ms-auto mb-2 mb-md-0 pe-3">
-                        <form id="searchForm" action="includes/menusearch.inc.php" class="search-large-screen form-inline my-2 my-lg-0" method="get">
-                            <input class="search-bar form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-                            <button class="search-button btn btn-outline-success mr-sm-2" type="submit" name="searchsubmit" data-bs-toggle="modal" data-bs-target="#searchModal">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
+                        <form id="searchForm" action="includes/menusearch.inc.php" class="search-large-screen search-form form-inline my-2 my-lg-0" method="get">
+                            <div class="form-group">
+                                <input class="search-bar form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                                <button class="search-button btn btn-outline-success mr-sm-2" type="submit" name="searchsubmit" data-bs-toggle="modal" data-bs-target="#searchModal">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                            <div class="live-search-result">
+                                <ul class="search-result">
+
+                                </ul>
+                            </div>
                         </form>
+
                         <li class="nav-item">
                             <a class="nav-link home nav-btn mx-md-2" aria-current="page" href="index.php?page=home">
                                 Home
@@ -77,11 +85,18 @@
             </div>
 
             <div class="search-form d-flex">
-                <form id="searchFormSmall" action="includes/menusearch.inc.php" class="search-small-screen form-inline my-2 my-lg-0" method="get">
-                    <input class="search-bar form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
-                    <button class="search-button btn btn-outline-success" type="submit" name="searchsubmit" data-bs-toggle="modal" data-bs-target="#searchModal">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
+                <form id="searchFormSmall" action="includes/menusearch.inc.php" class="search-small-screen search-form form-inline my-2 my-lg-0" method="get">
+                    <div class="form-group">
+                        <input class="search-bar form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                        <button class="search-button btn btn-outline-success mr-sm-2" type="submit" name="searchsubmit" data-bs-toggle="modal" data-bs-target="#searchModal">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                    <div class="live-search-result">
+                        <ul class="search-result">
+
+                        </ul>
+                    </div>
                 </form>
             </div>
             <div class="d-flex">
@@ -114,3 +129,5 @@
         </div>
     </nav>
 </header>
+
+<script src="livesearch.js"></script>

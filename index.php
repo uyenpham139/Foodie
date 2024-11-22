@@ -23,6 +23,10 @@
         $page = new Search();
         $page->index();
     }
+    else if (strpos($url, 'menu-product') !== false) {
+        $page = new MenuProduct();
+        $page->index();
+    }
     else if (strpos($url, 'menu') !== false) {
         $page = new Menu();
         $page->index();
