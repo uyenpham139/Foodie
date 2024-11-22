@@ -23,28 +23,6 @@
                         </div>
                     </div>
                     <div class="menu-tab-wp">
-                        <div class="row">
-                            <div class="col-lg-12 m-auto">
-                                <div class="menu-tab text-center">
-                                    <ul class="filters">
-                                        <div class="filter-active"></div>
-                                        <li class="filter" data-filter=".all, .breakfast, .lunch, .dinner">
-                                            All
-                                        </li>
-                                        <li class="filter" data-filter=".breakfast">
-                                            Breakfast
-                                        </li>
-                                        <li class="filter" data-filter=".lunch">
-                                            Lunch
-                                        </li>
-                                        <li class="filter" data-filter=".dinner">
-                                            Dinner
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="menu-list-row">
                         <div class="row g-xxl-5 bydefault_show" id="menu-dish">
                             <?php foreach ($searchItems as $item): ?>

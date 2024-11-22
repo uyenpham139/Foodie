@@ -21,11 +21,11 @@
                     </div>
                     <div class="menu-tab-wp">
                         <div class="row">
-                            <div class="col-lg-12 m-auto">
+                            <div class="filter-bar col-lg-12 m-auto">
                                 <div class="menu-tab text-center">
                                     <ul class="filters">
                                         <div class="filter-active"></div>
-                                        <li class="filter" data-filter=".all, .breakfast, .lunch, .dinner">
+                                        <li class="filter" data-filter=".all, .breakfast, .lunch, .dinner, .drinks">
                                             All
                                         </li>
                                         <li class="filter" data-filter=".breakfast">
@@ -36,6 +36,9 @@
                                         </li>
                                         <li class="filter" data-filter=".dinner">
                                             Dinner
+                                        </li>
+                                        <li class="filter" data-filter=".drinks">
+                                            Drinks
                                         </li>
                                     </ul>
                                 </div>
@@ -83,9 +86,15 @@
             </div>
         </section>
     </main>
-
+    
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- MixItUp -->
+    <script src="https://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+    
     <!-- Javascript -->
     <script src="index.js"></script>
+    <script src="menu.js"></script>
     <script src="modal.js"></script>
 </body>
 

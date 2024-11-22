@@ -3,7 +3,10 @@
 .sec-wp {
     position: relative;
     z-index: 4;
-    height: 100vh;
+}
+
+.sec-wp .container {
+    min-height: 100vh;
 }
 
 .sec-title .h3-title {
@@ -22,9 +25,19 @@
     margin-bottom: 80px;
 }
 
-.menu-tab ul {
+.filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-tab {
+    width: 50%;
+}
+
+.menu-tab .filters {
     padding: 10px;
-    display: inline-block;
+    display: flex;
     border-radius: 60px;
     background: var(--background-color);
     color: var(--sub-sub-color);
@@ -32,10 +45,12 @@
     font-weight: 500;
     position: relative;
     z-index: 2;
+    justify-content: center;
+    align-items: center;
 }
 
-.menu-tab ul li {
-/* .menu-tab ul .filter-active */
+.menu-tab ul li,
+.menu-tab ul .filter-active {
     display: inline-flex;
     font-size: 18px;
     line-height: normal;
@@ -47,13 +62,13 @@
     align-items: center;
 }
 
-/* .filter-active {
+.filter-active {
     position: absolute;
     left: 0;
-    top: 12px;
+    height: 80%;
     min-height: 50px;
     z-index: -1;
-} */
+}
 
 .menu-tab ul li img {
     margin-right: 10px;
