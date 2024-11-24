@@ -13,28 +13,10 @@ if (isset($_SESSION['product_not_found']) && $_SESSION['product_not_found']) {
 }
 ?>
 
-<!-- Modal -->
-<div class="modal fade" id="productNotFoundModal" tabindex="-1" aria-labelledby="productNotFoundLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="productNotFoundLabel">Product Not Found</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <p>The product you're looking for could not be found.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 <body>    
     <!-- Main -->
     <main>
-        <section class="hero-section section py-5" id="home">
+        <section class="hero-section section py-4" id="home">
             <div class="container py-3">
                 <div class="row g-5">
                     <div class="d-flex align-items-center justify-content-between">
@@ -60,7 +42,7 @@ if (isset($_SESSION['product_not_found']) && $_SESSION['product_not_found']) {
             </div>
         </section>
 
-        <section class="news-section section py-5" id="news-pro">
+        <section class="news-section section py-4" id="news-pro">
             <div class="container">
                 <h2 class="news-title text-center pt-5 pb-5">
                     What's New

@@ -15,7 +15,7 @@
                     About
                 </h2>
                 <div class="components row align-items-center gx-3 gy-5 py-5">
-                    <div class="col-12 col-md-12 col-lg-5">
+                    <div class="col-12 col-md-12 col-lg-5 mt-0">
                         <?php if (!empty($address)): ?>
                             <iframe width="70%" height="500" src="https://maps.google.com/maps?q=<?php echo urlencode($address); ?>&output=embed"></iframe>
                         <?php elseif (!empty($latitude) && !empty($longitude)): ?>
@@ -24,7 +24,7 @@
                             <p>No location data available.</p>
                         <?php endif; ?>
                     </div>
-                    <div class="col-12 col-md-12 text-center text-lg-start col-lg-7">
+                    <div class="col-12 col-md-12 text-center text-lg-start col-lg-7 mt-0">
                         <h3 class="title fw-bold fs-1 pb-3">Discover Foodie Story</h2>
                         <p class="description">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse et 

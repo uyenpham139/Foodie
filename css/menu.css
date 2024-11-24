@@ -3,16 +3,17 @@
 .sec-wp {
     position: relative;
     z-index: 4;
+    font-family: 'Roboto', sans-serif;
 }
 
-.sec-wp .container {
+.menu .container-fluid {
+    background-image: url(../assets/menu-header-bg.jpg);
+    background-size: cover;
+}
+
+.sec-wp .body-section {
     min-height: 100vh;
-}
-
-.sec-title .h3-title {
-    color: var(--sub-color);
-    font-family: "Roboto", Arial, Helvetica, sans-serif;
-    font-weight: 500;
+    padding: 30px 0;
 }
 
 .repeat-img {
@@ -21,168 +22,221 @@
     background-repeat: repeat;
 }
 
-.menu-tab-wp {
-    margin-bottom: 80px;
-}
-
-.filter-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu-tab {
-    width: 50%;
-}
-
-.menu-tab .filters {
-    padding: 10px;
-    display: flex;
-    border-radius: 60px;
-    background: var(--background-color);
-    color: var(--sub-sub-color);
+.menu .sec-title .h3-title {
+    color: var(--sub-color);
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-weight: 500;
+}
+
+.menu .sec-title {
+    padding-top: 40px;
+}
+
+.menu .sec-title a {
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: var(--sub-sub-color);
+}
+
+.menu .sec-title .current{
+    color: var(--sub-color-1);    
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.menu .wrapper {
+    display: flex;
+}
+
+.menu .menu-sidebar {
+    width: 20%;
+    padding: 0 20px;
+}
+
+.menu .menu-sidebar .searchForm {
+    width: 100%;
+    padding: 0;
     position: relative;
-    z-index: 2;
-    justify-content: center;
-    align-items: center;
 }
 
-.menu-tab ul li,
-.menu-tab ul .filter-active {
-    display: inline-flex;
-    font-size: 18px;
-    line-height: normal;
-    cursor: pointer;
-    padding: 10px 26px;
-    border-radius: 30px;
-    transition: 0.3s;
-    justify-content: center;
-    align-items: center;
+.menu .menu-sidebar .search .search-input{
+    width: 100%;
+    background-color: var(--food-card-color);
 }
 
-.filter-active {
+.menu .menu-sidebar .search .search-input:focus{
+    box-shadow: none;
+    outline: none;
+    border: 1px solid var(--sub-sub-color);
+}
+
+.menu .menu-sidebar .search .search-btn{
     position: absolute;
-    left: 0;
-    height: 80%;
-    min-height: 50px;
-    z-index: -1;
+    right: 0;
+    height: 100%;
+    background-color: var(--sub-sub-color);
+    border-radius: 0 5px 5px 0;
+    transition: 0.2s ease;
 }
 
-.menu-tab ul li img {
-    margin-right: 10px;
-    position: relative;
-    top: 1px;
+.menu .menu-sidebar .search .search-btn:hover{
+    background-color: var(--sub-color);
 }
 
-.menu-tab ul .filter-active {
-    color: #ffffff;
-    background-color: var(--primary-color);
+.menu .menu-sidebar .search .search-btn i{
+    color: var(--white-color);
 }
 
-.menu-list-row .bydefault_show .dish-box-wp {
-    display: inline-block !important;
+.menu .menu-sidebar .type-filter {
+    background-color:  var(--food-card-color);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    border-radius: 20px;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
-.dish-box-wp {
-    display: none;
+.menu .menu-sidebar .type-filter h3 {
+    font-size: 1.5em;
+    padding: 20px 0 30px 10px;
+    margin: 0;
+    border-bottom: 1.5px solid rgb(209, 207, 202);
+    color: var(--sub-sub-color);
 }
 
-.dish-box {
-    border-radius: 30px;
-    background-color: var(--background-color);
-    display: flow-root;
-    padding: 0 30px 40px;
-    padding-top: 0;
-    margin: 130px 0 30px;
-    transition: 0.8s cubic-bezier(0.22, 0.78, 0.45, 1.02);
+.menu .menu-sidebar ul {
+    padding-left: 0;
+    width: 100%;
 }
-
-.dish-box:hover {
-    transform: scale(1.03);
+.menu .menu-sidebar li {
+    list-style-type: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border-bottom: 1.5px solid rgb(209, 207, 202);
+    color: var(--text-color);
+    transition: 0.2s ease;
+    text-align: left;
 }
-
-.dist-img {
-    margin-top: -130px;
-    margin-bottom: 30px;
-}
-
-.dist-img img {
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.dish-rating {
-    font-size: 20px;
-    margin-bottom: 15px;
-}
-.dish-rating .star-icon {
+.menu .menu-sidebar li:hover {
     color: var(--primary-color);
 }
 
-.dish-title {
+.menu .menu-sidebar .type-filter .filter.active {
+    color: var(--sub-color-1);
+}
+
+.menu .menu-sidebar .price-filter {
+    background-color: aqua;
+    margin-bottom: 20px;
+}
+
+.menu .menu-list-row {
+    width: 80%;
+    padding: 10px 0px;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevents content from overflowing */
+    background-color: var(--white-color);
+    border-radius: 20px;
+}
+
+.menu .menu-list-row .menu-dish {
+    display: flex;
+    flex-wrap: wrap;
     padding: 0 30px;
 }
 
-.dish-title .h3-title {
-    margin-bottom: 2px;
-    font-family: 'Inter', Arial, Helvetica, sans-serif;
-    color: var(--sub-color);
-    transition: 0.3s;
-    min-height: 76px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    font-weight: 900;
+.menu .menu-list-row .dish-box-wp{
+    padding: 5px;
 }
 
-.dish-title p {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    color: var(--sub-sub-color);
-    border-bottom: 2px solid rgb(204 204 204 / 30%);
-    padding-bottom: 20px;
+.menu .menu-list-row .dish-box {
+    background-color: var(--food-card-color);
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 2px solid transparent; 
+    transition: 0.2s ease;
 }
 
-.dist-bottom-row ul {
+.menu .menu-list-row .dish-box:hover {
+    border: 2px solid var(--primary-color);
+}
+
+.menu .menu-list-row .dish-box .dish-img,
+.menu .menu-list-row .dish-box .dish-title {
+    cursor: pointer;
+}
+
+.menu .menu-list-row .dish-box .dish-rating {
+    font-size: 1.25em;
+    color: var(--text-color);
+}
+
+.menu .menu-list-row .dish-box .dish-rating i{
+    color: var(--primary-color);
+}
+
+.menu .menu-list-row .dish-box .category {
+    margin-top: 5px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1em;
+    font-weight: 400;
+    border-radius: 10px;
+    padding: 3px 20px; /* Adds spacing around the text */
+    display: inline-block; 
+    margin-left: auto; /* Centers the element horizontally */
+    margin-right: auto; /* Centers the element horizontally */
+}
+
+.menu .menu-list-row .dish-box .description {
+    color: var(--text-color);
+    font-size: 1em;
+    font-weight: 400;
+    text-align: justify;
+    padding: 5px 15px;
+    user-select: none;
+}
+
+.menu .menu-list-row .dist-bottom-row {
+    margin-top: auto; /* Pushes it to the bottom */
+    margin-bottom: 10px; /* Adds 10px space from the bottom */
+}
+
+.menu .menu-list-row .dist-bottom-row ul {
     display: flex;
     justify-content: space-between;
-    text-align: left;
-}
-
-.dist-bottom-row ul li:last-child {
-    text-align: right;
-}
-
-.dist-bottom-row {
-    padding: 0 30px;
-}
-
-.dist-bottom-row ul li {
-    display: flex;
     align-items: center;
 }
 
-.dist-bottom-row ul li b {
-    font-size: 26px;
+.menu .menu-list-row .dist-bottom-row li {
+    list-style-type: none;
 }
 
-.dish-add-btn {
-    width: 40px;
-    height: 40px;
+.menu .menu-list-row .dist-bottom-row .price {
+    font-size: 1.5em;
+    font-weight: 500;
+    color: var(--sub-color-1);
+    user-select: none;
+}
+
+.menu .menu-list-row .dist-bottom-row .dish-add-btn {
     border: none;
     border-radius: 10px;
-    color: #ffffff;
-    transition: 0.3s;
-    background-color: rgb(255, 188, 0);
+    display: flex;
+    align-items: center;
+    background-color: var(--sub-sub-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    gap: 10px;
+    transition: 0.2s ease;
 }
 
-.dish-add-btn i {
-    color: #ffffff;
-    font-size: 22px;
-}
-
-.dish-add-btn:hover {
-    background: linear-gradient(145deg, #e3a92b, #ffc933);
+.menu .menu-list-row .dist-bottom-row .dish-add-btn:hover {
+    background-color: var(--sub-color);
 }

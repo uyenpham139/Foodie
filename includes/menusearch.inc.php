@@ -1,6 +1,7 @@
 <?php
     if(!isset($_SESSION["username"]))
         session_start(); 
+
     if (isset($_GET["action"])) {
         $action = $_GET["action"];
         define('localhost/foodie', '../');
@@ -23,8 +24,7 @@
         include_once "../controllers/backend/searchcontroller.contr.php";
 
         $search = new SearchController($keyword);
-        $searchData = $search->searchItems();
-        $_SESSION['searchItems'] = $searchData;
+        $searchData = $search->searchItems($keyword);
         header('Content-Type: application/json'); // Set correct content type
         echo json_encode($searchData);
         exit(); // Ensure no further output
@@ -48,7 +48,7 @@
             exit();
         }
     
-        $searchItems = $searchItem->searchItems();
+        $searchItems = $searchItem->searchItems($item);
     } 
     
     if (empty($searchItems)) {

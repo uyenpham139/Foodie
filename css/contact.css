@@ -7,13 +7,15 @@
 }
 
 .contact .container {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 .contact .contact-box {
+    height: 600px;
+    max-width: 1200px;
     position: relative;
     display: flex;
     width: 100%;
@@ -23,18 +25,25 @@
 
 .contact .item {
     width: 100%;
-    height: 550px;
-    max-width: 920px;
+    height: 100%;
     border-radius: 20px;
     box-shadow: 0 0 10px 10px rgba(0,0,0,0.4);
     overflow: hidden;
     grid-template-columns: repeat(2, 1fr);
-    display: grid;
-    z-index: 1000;
+    display: flex;
 }
 
 .contact .contact-info {
+    width: 60%;
     background-color: var(--primary-color);
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact .contact-info .map{
+    width: 90%;
+    height: 70%;
 }
 
 .contact .first-text {
@@ -56,6 +65,7 @@
 .contact .social-media {
     display: flex;
     list-style: none;
+    text-align: left;
 }
 
 .contact .social-media ul li {
@@ -78,6 +88,7 @@
 }
 
 .contact .submit-form {
+    width: 40%;
     background-color: var(--background-color);
 }
 
@@ -174,6 +185,10 @@
 
     .contact .contact-info {
         display: none;
+    }
+
+    .contact .submit-form {
+        width: 100%;
     }
 
     .contact .submit-form .text {

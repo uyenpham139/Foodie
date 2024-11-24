@@ -14,8 +14,13 @@ class SearchController extends Product{
         return true;
     }
 
-    public function searchItems() {
-        $productData =  $this->getProduct($this->item);
+    public function searchItems($item) {
+        $productData =  $this->getProduct($item);
+        return $productData;
+    }
+    
+    public function getSearchProduct($id) {
+        $productData =  $this->getProductById($id);
         return $productData;
     }
 }

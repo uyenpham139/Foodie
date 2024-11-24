@@ -3,7 +3,6 @@
         
         public function getMenuItems($type) {
             $query = "SELECT * FROM menu";
-            $params = [];
 
             // Determine the flag based on the type
             if ($type === 'breakfast') {
@@ -62,6 +61,28 @@
                     $productData[] = $row;
                 }
             }            
+            return $productData; // Return the fetched product data
+        }
+
+        protected function getProductById($productid) {
+            $query = $this->connect()->prepare("SELECT * FROM menu WHERE menu_id = ?");
+            $query->bind_param("i", $productid);
+        
+            if(!$query->execute()) {
+                $query = null;
+                header("location: ../index.php?page=menu&error=queryfailed");
+                exit();
+            }
+        
+            $result = $query->get_result();
+            $query->close();
+
+            if(!$result->num_rows > 0) {
+                $query = null;
+                $_SESSION['product_not_found'] = true;
+            }
+            
+            $productData = mysqli_fetch_assoc($result);         
             return $productData; // Return the fetched product data
         }
     }

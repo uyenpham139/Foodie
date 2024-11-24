@@ -12,42 +12,10 @@ $(document).ready(function ($) {
 
     // Apply the initial filter based on URL parameter
     if (currentFilter !== '') {
-        $(`.filters .filter[data-filter=".${currentFilter}"]`).addClass('active');
-        $('#menu-dish').mixitup('filter', `.${currentFilter}`);
+        $(`.filters .filter[data-filter="${currentFilter}"]`).addClass('active');
     } else {
-        $(`.filters .filter[data-filter=".all"]`).addClass('active');
-        $('#menu-dish').mixitup('filter', '.all');
+        $(`.filters .filter[data-filter="all"]`).addClass('active');
     }
-
-    // Initialize MixItUp
-    $('#menu-dish').mixitup({
-        selectors: {
-            target: '.dish-box-wp',
-            filter: '.filter',
-        },
-        animation: {
-            effects: 'fade',
-            easing: 'ease-in-out',
-        },
-        load: {
-            filter: `.${currentFilter}`,
-        },
-    });
-
-    // Update the URL when a filter is selected
-    $('.filters .filter').on('click', function () {
-        const filterClass = $(this).data('filter').replace('.', ''); // Get the class name without the dot
-        const url = new URL(window.location.href);
-        url.searchParams.set('type', filterClass); // Update the 'type' parameter in the URL
-        window.history.pushState({}, '', url); // Update the browser's URL without reloading the page
-
-        // Apply the filter
-        $('#menu-dish').mixitup('filter', `.${filterClass}`);
-
-        // Highlight the active filter
-        $('.filters .filter').removeClass('active');
-        $(this).addClass('active');
-    });
 
     // Function to load menu items dynamically based on the filter
     function loadMenuItems(filter) {
@@ -64,47 +32,63 @@ $(document).ready(function ($) {
         });
     }
 
-    // Initialize Parallax (check if you have included the Parallax library)
-    const scene = $(".js-parallax-scene").get(0);
-    const parallaxInstance = new Parallax(scene);
 });
 
-jQuery(window).on('load', function () {
-    // Tab filter animation with GSAP
-    const targets = document.querySelectorAll(".filter");
-    let activeTab = 0;
-    let old = 0;
-    let animation;
+document.querySelectorAll('.dish-img, .dish-title').forEach(element => {
+    element.addEventListener('click', function () {
+        const productId = this.closest('.dish-box').getAttribute('data-id');
+        window.location.href = `/foodie/index.php?page=menu-product&product-id=${productId}`;
+    });
+});
 
-    for (let i = 0; i < targets.length; i++) {
-        targets[i].index = i;
-        targets[i].addEventListener("click", moveBar);
-    }
+// For type filter
+document.addEventListener('DOMContentLoaded', () => {
+    const typeFilters = document.querySelectorAll('.type-filter .filter');
 
-    // Initial position on first (All) filter
-    gsap.set(".filter-active", {
-        x: targets[0].offsetLeft,
-        width: targets[0].offsetWidth,
+    // Handle filter click
+    typeFilters.forEach(filter => {
+        filter.addEventListener('click', () => {
+            // Remove 'active' class from all filters
+            typeFilters.forEach(f => f.classList.remove('active'));
+
+            // Add 'active' class to the clicked filter
+            filter.classList.add('active');
+
+            // Get the filter's data-filter attribute
+            const filterValue = filter.getAttribute('data-filter');
+
+            // // Update the URL based on the selected filter type
+            // const currentUrl = new URL(window.location.href);
+
+            if (filterValue === 'all') {
+                // Remove 'type' parameter for "All"
+                window.location.href = `/foodie/index.php?page=menu`;
+            } else {
+                // Set 'type' parameter for other filters
+                window.location.href = `/foodie/index.php?page=menu&type=${filterValue}`;
+            }
+
+            // // Reload the page with the updated URL
+            // window.location.href = currentUrl.toString();
+        });
     });
 
-    function moveBar() {
-        if (this.index !== activeTab) {
-            if (animation && animation.isActive()) {
-                animation.progress(1);
-            }
-            animation = gsap.timeline({ defaults: { duration: 0.2 } });
-            old = activeTab;
-            activeTab = this.index;
-
-            animation.to(".filter-active", {
-                x: targets[activeTab].offsetLeft,
-                width: targets[activeTab].offsetWidth,
-            });
-            animation.to(targets[old], { color: "rgb(65, 100, 74)", ease: "none" }, 0);
-            animation.to(targets[activeTab], { color: "#fff", ease: "none" }, 0);
-        }
-    }
+    // Mark the correct filter as active based on URL parameter
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const typeParam = urlParams.get('type');
+    // if (typeParam) {
+    //     const activeFilter = [...typeFilters].find(f => f.getAttribute('data-filter').includes(typeParam));
+    //     if (activeFilter) {
+    //         typeFilters.forEach(f => f.classList.remove('active'));
+    //         activeFilter.classList.add('active');
+    //     }
+    // } else {
+    //     // Default to 'All' if no 'type' parameter in URL
+    //     const allFilter = [...typeFilters].find(f => f.getAttribute('data-filter').includes('.all'));
+    //     if (allFilter) {
+    //         typeFilters.forEach(f => f.classList.remove('active'));
+    //         allFilter.classList.add('active');
+    //     }
+    // }
 });
-
-
 

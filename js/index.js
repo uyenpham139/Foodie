@@ -10,6 +10,21 @@ const keysValues = window.location.search;
 var urlParams = new URLSearchParams(keysValues);
 const page = urlParams.get('page');
 
+function applyScrolledStyles() {
+    navElement.classList.add('navbar-scrolled');
+    brandName.classList.add('brand-name-scrolled');
+    navBtns.forEach(navBtn => {
+        navBtn.classList.add('nav-btn-scrolled');
+    });
+    if (typeof window.sessionStorage.getItem("username") !== 'undefined' && window.sessionStorage.getItem("username") !== null) {
+        username.classList.add('username-scrolled');
+        logoutBtn.classList.add('logout-btn-scrolled');
+    } else {
+        loginBtn.classList.add('login-button-scrolled');
+        signupBtn.classList.add('signup-button-scrolled');
+    }
+}
+
 switch (page) {
     case 'signup':
         document.title = 'Sign up';
@@ -23,10 +38,29 @@ switch (page) {
         break;
     case 'menu-search':
         document.querySelector('.menu').classList.add('active');
+        applyScrolledStyles();
         document.title = 'Searching';
+        break;
+    case 'menu-product':
+        document.querySelector('.menu').classList.add('active');
+        applyScrolledStyles();
+        document.title = 'Product';
+        break;
+    case 'menu-breakfast':
+        document.querySelector('.menu').classList.add('active');
+        document.title = 'Breakfast';
+        break;
+    case 'menu-lunch':
+        document.querySelector('.menu').classList.add('active');
+        document.title = 'Lunch';
+        break;
+    case 'menu-dinner':
+        document.querySelector('.menu').classList.add('active');
+        document.title = 'Dinner';
         break;
     case 'menu':
         document.querySelector('.menu').classList.add('active');
+        applyScrolledStyles();
         document.title = 'Menu';
         break;
     case 'about':
@@ -41,18 +75,6 @@ switch (page) {
         })
         document.title = 'Contact';
         break;
-    case 'menu-breakfast':
-        document.querySelector('.menu').classList.add('active');
-        document.title = 'Breakfast';
-        break;
-    case 'menu-lunch':
-        document.querySelector('.menu').classList.add('active');
-        document.title = 'Lunch';
-        break;
-    case 'menu-dinner':
-        document.querySelector('.menu').classList.add('active');
-        document.title = 'Dinner';
-        break;
     case 'menu-drinks':
         document.querySelector('.menu').classList.add('active');
         document.title = 'Dinner';
@@ -64,36 +86,38 @@ switch (page) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY >= 50) {
-            navElement.classList.add('navbar-scrolled');
-            brandName.classList.add('brand-name-scrolled');
-            navBtns.forEach(navBtn => {
-                navBtn.classList.add('nav-btn-scrolled');
-            });
-            if (typeof window.sessionStorage.getItem("username") !== 'undefined' && window.sessionStorage.getItem("username") !== null) {
-                username.classList.add('username-scrolled');
-                logoutBtn.classList.add('logout-btn-scrolled');
-            } else {
-                loginBtn.classList.add('login-button-scrolled');
-                signupBtn.classList.add('signup-button-scrolled');
+    if (page !== 'menu' && page !== 'menu-search' && page !== 'menu-product'){
+        window.addEventListener('scroll', () => {
+            if (window.scrollY >= 50) {
+                navElement.classList.add('navbar-scrolled');
+                brandName.classList.add('brand-name-scrolled');
+                navBtns.forEach(navBtn => {
+                    navBtn.classList.add('nav-btn-scrolled');
+                });
+                if (typeof window.sessionStorage.getItem("username") !== 'undefined' && window.sessionStorage.getItem("username") !== null) {
+                    username.classList.add('username-scrolled');
+                    logoutBtn.classList.add('logout-btn-scrolled');
+                } else {
+                    loginBtn.classList.add('login-button-scrolled');
+                    signupBtn.classList.add('signup-button-scrolled');
+                }
             }
-        }
-        else if (window.scrollY < 50) {
-            navElement.classList.remove('navbar-scrolled');
-            brandName.classList.remove('brand-name-scrolled');
-            navBtns.forEach(navBtn => {
-                navBtn.classList.remove('nav-btn-scrolled');
-            }); 
-            if (typeof window.sessionStorage.getItem("username") !== 'undefined' && window.sessionStorage.getItem("username") !== null) {
-                username.classList.remove('username-scrolled');
-                logoutBtn.classList.remove('logout-btn-scrolled');
-            } else {
-                loginBtn.classList.remove('login-button-scrolled');
-                signupBtn.classList.remove('signup-button-scrolled');
+            else if (window.scrollY < 50) {
+                navElement.classList.remove('navbar-scrolled');
+                brandName.classList.remove('brand-name-scrolled');
+                navBtns.forEach(navBtn => {
+                    navBtn.classList.remove('nav-btn-scrolled');
+                }); 
+                if (typeof window.sessionStorage.getItem("username") !== 'undefined' && window.sessionStorage.getItem("username") !== null) {
+                    username.classList.remove('username-scrolled');
+                    logoutBtn.classList.remove('logout-btn-scrolled');
+                } else {
+                    loginBtn.classList.remove('login-button-scrolled');
+                    signupBtn.classList.remove('signup-button-scrolled');
+                }
             }
-        }
-    });    
+        });    
+    }
 });
 
 

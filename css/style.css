@@ -16,6 +16,8 @@
 
     --sub-sub-color: rgb(65, 100, 74);
 
+    --food-card-color: rgb(255,245,233);
+
     --white-color: rgb(255, 255, 255);
 
     --heading-color: rgb(65, 100, 74);
@@ -26,8 +28,12 @@
   }
 
 body {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
+}
+
+section {
+    padding-top: 10px;
 }
 
 section {
