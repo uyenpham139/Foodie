@@ -77,8 +77,6 @@
 
 .offcanvas-body {
     transition: none;
-    display: flex;
-    align-items: center;
 }
 
 .navbar .other-btn li {
