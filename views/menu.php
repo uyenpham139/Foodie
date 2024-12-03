@@ -70,6 +70,49 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="menu-selections">
+                            <div class="search row">
+                                <form action="includes/menusearch.inc.php" class="searchForm form-inline" method="get">
+                                <div class="form-group">
+                                    <input class="search-input form-control" type="search" placeholder="Search" aria-label="Search" name="search">
+                                    <button class="search-btn btn " type="submit" name="searchsubmit" data-bs-toggle="modal" data-bs-target="#searchModal">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </form>
+                            </div>
+                            <div class="type-filter row">
+                                <div class="col-lg-12 m-auto">
+                                    <h3>All menu</h3>
+                                    <div class="menu-tab text-center">
+                                        <ul class="filters">
+                                            <li class="filter" data-filter="all">
+                                                All
+                                            </li>
+                                            <li class="filter" data-filter="breakfast">
+                                                Breakfast
+                                            </li>
+                                            <li class="filter" data-filter="lunch">
+                                                Lunch
+                                            </li>
+                                            <li class="filter" data-filter="dinner">
+                                                Dinner
+                                            </li>
+                                            <li class="filter" data-filter="drinks">
+                                                Drinks
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="price-filter row">
+                                <div class="col-lg-12 m-auto">
+                                    <div class="menu-tab text-center">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="menu-list-row">
                             <div class="menu-dish row g-xxl-5 bydefault_show" id="menu-dish">
                                 <?php foreach ($menuItems as $item): ?>
@@ -97,7 +140,7 @@
                                                 </li>
                                                 <li>
                                                     <button class="dish-add-btn">
-                                                        Add to cart
+                                                        <span>Add to cart</span>
                                                         <i class="fa-solid fa-cart-shopping"></i>
                                                     </button>
                                                 </li>

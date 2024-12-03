@@ -1,136 +1,213 @@
-/*-- Contact --*/
-.contact {
+.contact-page .contact {
     background-color: var(--sub-sub-color);
-    background-image: url(../assets/menu-bg.png);
-    background-size: contain;
+    background-image: url("../assets/menu-bg.png");
     background-repeat: repeat;
+    background-size: contain;
 }
 
-.contact .container {
-    min-height: 100vh;
+.contact-page .contact .header-section{
     display: flex;
-    align-items: center;
     flex-direction: column;
-}
-
-.contact .contact-box {
-    height: 600px;
-    max-width: 1200px;
-    position: relative;
-    display: flex;
-    width: 100%;
-    justify-content: center;
     align-items: center;
+    margin-bottom: 60px;
 }
 
-.contact .item {
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    box-shadow: 0 0 10px 10px rgba(0,0,0,0.4);
-    overflow: hidden;
-    grid-template-columns: repeat(2, 1fr);
+.contact-page .contact .header-section h1 {
+    margin: 0;
+}
+
+.contact-page .contact .header-section p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--white-color);
+    margin: 0;
+    text-align: center;
+    width: 65%;
+}
+
+.contact-page .contact .contact-section {
+    background-color: rgb(237, 242, 238);
+    padding: 50px 0;
+}
+
+.contact-page .contact .contact-component {
     display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
 }
 
-.contact .contact-info {
-    width: 60%;
+.contact-page .contact .contact-info-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+}
+
+.contact-page .contact .contact-info-section h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: var(--sub-sub-color);
+}
+
+.contact-page .contact .contact-info-section p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--sub-color);
+}
+
+.contact-page .contact .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-page .contact .item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-page .contact .item .list-icon {
+    color: var(--white-color);
     background-color: var(--primary-color);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-page .contact .item .address li,
+.contact-page .contact .item p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.contact-page .contact .item .text {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.25em;
+    margin-bottom: 7px;
+}
+
+.contact-page .contact .item ul {
+    padding: 0;
+}
+
+.contact-page .contact .item .address li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    transition: 0.1s ease;
+    user-select: none;
+    cursor: pointer;
+}
+
+.contact-page .contact .item .address li:hover {
+    color: var(--primary-color);
+}
+.contact-page .contact .item .address li.active {
+    color: var(--sub-color-1);
+}
+
+.contact-page .contact .social-links {
+    display: flex;
+    flex-direction: column;
+    border-top: 1.5px solid var(--sub-color-1);
+}
+
+.contact-page .contact .social-links .text{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text-color);
+    margin: 4px 0;
+}
+
+.contact-page .contact .social-media {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.contact-page .contact .social-media li {
+    list-style-type: none;
+    background-color: var(--sub-sub-color);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.1s ease;
+}
+
+.contact-page .contact .social-media li:hover {
+    background-color: var(--sub-color);
+}
+
+.contact-page .contact .social-media li a {
+    color: var(--white-color);
+}
+
+/*--- Left hand side ---*/
+.contact-page .contact .submit-form {
+    width: 50%;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    background-color: var(--white-color);
+    border-radius: 20px;
+    padding: 20px 0;
+    height: 550px;
 }
 
-.contact .contact-info .map{
-    width: 90%;
-    height: 70%;
-}
-
-.contact .first-text {
-    font-family: "Inter", Arial, Helvetica, sans-serif;
-    font-size: 42px;
-    font-weight: bold;
-    padding: 20px 40px;
-    color: var(--white-color);
-}
-
-.contact .second-text {
-    font-family: "Inter", Arial, Helvetica, sans-serif;
-    font-size: 24px;
+.contact-page .contact .submit-form h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2em;
     font-weight: 500;
-    padding: 20px 40px;
-    color: var(--sub-color);
+    color: var(--primary-color);
+    margin: 20px 0;
 }
 
-.contact .social-media {
+.contact-page .contact .submit-form form {
     display: flex;
-    list-style: none;
-    text-align: left;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.contact .social-media ul li {
-    padding-left: 15px;
-    font-size: 24px;
-    width: 40px;
+.contact-page .contact .input-box {
     height: 40px;
-}
-
-.contact .social-media i {
-    background-color: var(--sub-sub-color)!important;
-    color: var(--white-color);
-    padding: 10px;
-    margin: 20px 5px;
-    border-radius: 50%;
-    transition: 0.3s all;
-}
-.contact .social-media i:hover {
-    background-color: var(--sub-color)!important;
-}
-
-.contact .submit-form {
-    width: 40%;
-    background-color: var(--background-color);
-}
-
-.contact .third-text {
-    font-size: 32px;
-    position: relative;
-    top: 20px;
-    left: 20px;
-    padding-top: 10px;
-    padding-left: 40px;
-    color: var(--sub-color);
-    font-family: "Inter", Arial, Helvetica, sans-serif;
-    font-weight: bold;
-}
-
-.contact .submit-form form {
-    padding: 0 50px;
-    height: 100%;
     width: 100%;
-    overflow: hidden;
-}
-
-.contact .input-box {
-    height: 40px;
-    width: 90%;
-    margin: 30px 0;
     position: relative;
 }
 
-.contact .input-box .input {
+.contact-page .contact .input-box .input {
     font-family: "Roboto", Arial, Helvetica, sans-serif;
     width: 100%;
     height: 100%;
     background: transparent;
     border: 2px solid var(--sub-sub-color);
-    border-radius: 20px;
+    border-radius: 5px;
     outline: none;
     padding-left: 10px;
     font-size: 16px;
 }
 
-.contact .input-box label {
+.contact-page .contact .input-box label {
     position: absolute;
     top: 50%;
     left: 10px;
@@ -143,27 +220,27 @@
     transition: 0.3s;
 }
 
-.contact .input-box .input:focus ~ label,
-.contact .input-box .input:valid ~ label {
+.contact-page .contact .input-box .input:focus ~ label,
+.contact-page .contact .input-box .input:valid ~ label {
     top: -1px;
     left: 10px;
-    background: var(--background-color);
+    background: var(--white-color);
     font-weight: 500;
     font-size: 12px;
     padding: 5px;
 }
 
-.contact textarea.input {
+.contact-page .contact textarea.input {
     resize: none;
     min-height: 150px;
     overflow: auto;
 }
 
-.contact .submit-btn {
+.contact-page .contact .submit-btn {
     position: relative;
     top: 100px;
     background-color: var(--primary-color);
-    color: var(--sub-sub-color);
+    color: var(--white-color);
     outline: none;
     border: none;
     border-radius: 50px;
@@ -173,25 +250,24 @@
     transition: 0.3s all;
 }
 
-.contact .submit-btn:hover {
+.contact-page .contact .submit-btn:hover {
     background-color: var(--sub-sub-color);
     color: var(--white-color);
 }
 
-@media(max-width:850px){
-    .contact .item {
-        grid-template-columns: 1fr;
+.contact-page .map {
+    height: 500px;
+}
+
+/* Small screen */
+@media (max-width: 768px) {
+    .contact-page .contact .contact-component {
+        flex-direction: column;
     }
 
-    .contact .contact-info {
-        display: none;
-    }
-
-    .contact .submit-form {
+    .contact-page .contact .submit-form,
+    .contact-page .contact .contact-info-section {
         width: 100%;
     }
 
-    .contact .submit-form .text {
-        font-size: 36px;
-    }
 }

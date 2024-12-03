@@ -7,7 +7,6 @@ class Home {
         require_once 'views/components/nav.php';
         require_once 'views/home.php';
         require_once 'views/about.php';
-        require_once 'views/contact.php';
         require_once 'views/components/footer.php';
     }
 }

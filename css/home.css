@@ -68,6 +68,7 @@
 .section-title {
     color: var(--sub-color-1)!important;
 }
+
 .contact-section-title {
     color: var(--white-color)!important;
 }
@@ -93,5 +94,203 @@
     
     .hero-section .title {
         font-size: 2.2em;
+    }
+}
+
+/*-- Contact --*/
+.homepage .contact {
+    background-color: var(--sub-sub-color);
+    background-image: url(../assets/menu-bg.png);
+    background-size: contain;
+    background-repeat: repeat;
+}
+
+.homepage .contact .container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.homepage .contact .contact-box {
+    height: 600px;
+    max-width: 1000px;
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.homepage .contact .item {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.4);
+    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+}
+
+.homepage .contact .contact-info {
+    width: 50%;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.homepage .contact .contact-info .map{
+    width: 90%;
+    height: 70%;
+}
+
+.homepage .contact .first-text {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 42px;
+    font-weight: bold;
+    padding: 20px 40px;
+    color: var(--white-color);
+}
+
+.homepage .contact .second-text {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 20px 40px;
+    color: var(--sub-color);
+}
+
+.homepage .contact .social-media {
+    display: flex;
+    list-style: none;
+    text-align: left;
+}
+
+.homepage .contact .social-media ul li {
+    padding-left: 15px;
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+}
+
+.homepage .contact .social-media i {
+    background-color: var(--sub-sub-color)!important;
+    color: var(--white-color);
+    padding: 10px;
+    margin: 20px 5px;
+    border-radius: 50%;
+    transition: 0.3s all;
+}
+.homepage .contact .social-media i:hover {
+    background-color: var(--sub-color)!important;
+}
+
+.homepage .contact .submit-form {
+    width: 50%;
+    background-color: var(--background-color);
+}
+
+.homepage .contact .third-text {
+    font-size: 32px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    padding-top: 10px;
+    padding-left: 40px;
+    color: var(--sub-color);
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.homepage .contact .submit-form form {
+    padding: 0 50px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.homepage .contact .input-box {
+    height: 40px;
+    width: 90%;
+    margin: 30px 0;
+    position: relative;
+}
+
+.homepage .contact .input-box .input {
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid var(--sub-sub-color);
+    border-radius: 20px;
+    outline: none;
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.homepage .contact .input-box label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    padding-left: 10px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    color: var(--sub-sub-color);
+    transition: 0.3s;
+}
+
+.homepage .contact .input-box .input:focus ~ label,
+.homepage .contact .input-box .input:valid ~ label {
+    top: -1px;
+    left: 10px;
+    background: var(--background-color);
+    font-weight: 500;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.homepage .contact textarea.input {
+    resize: none;
+    min-height: 150px;
+    overflow: auto;
+}
+
+.homepage .contact .submit-btn {
+    position: relative;
+    top: 100px;
+    background-color: var(--primary-color);
+    color: var(--sub-sub-color);
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s all;
+}
+
+.homepage .contact .submit-btn:hover {
+    background-color: var(--sub-sub-color);
+    color: var(--white-color);
+}
+
+@media(max-width:850px){
+    .homepage .contact .item {
+        grid-template-columns: 1fr;
+    }
+
+    .homepage .contact .contact-info {
+        display: none;
+    }
+
+    .homepage .contact .submit-form {
+        width: 100%;
+    }
+
+    .homepage .contact .submit-form .text {
+        font-size: 36px;
     }
 }
