@@ -25,7 +25,7 @@
 
         $search = new SearchController($keyword);
         $searchData = $search->searchItems($keyword);
-        header('Content-Type: application/json'); // Set correct content type
+        header('Content-Type: application/json'); 
         echo json_encode($searchData);
         exit(); // Ensure no further output
     }
